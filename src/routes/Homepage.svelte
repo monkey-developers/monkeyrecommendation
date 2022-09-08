@@ -1,8 +1,10 @@
 <script lang="ts">
+  import Navbar from "../lib/navbar/Navbar.svelte";
 </script>
 
-<div>oi</div>
+<div>
+  <Navbar />
+</div>
 
 <style>
-
 </style>
