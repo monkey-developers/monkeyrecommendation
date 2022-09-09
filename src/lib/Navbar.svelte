@@ -12,7 +12,6 @@
   .navbar-container {
     padding: 20px 20px;
     color: $lightColor;
-    font-family: Rubik;
 
     & > .title {
       font-size: 2rem;

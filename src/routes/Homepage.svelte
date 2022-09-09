@@ -7,7 +7,8 @@
   <Navbar />
   <div class="content">
     <div class="list-container">
-      <Card />
+      <div><Card /></div>
+      <div><Card /></div>
     </div>
     <button>Recomendar</button>
   </div>
@@ -23,10 +24,12 @@
     gap: 10px;
 
     & > .list-container {
-      background-color: white;
+      display: flex;
+      flex-direction: column;
       padding: 25px;
       margin-left: 20px;
       margin-right: 20px;
+      gap: 30px;
     }
 
     & > button {
