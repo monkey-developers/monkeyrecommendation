@@ -1,11 +1,15 @@
 <script lang="ts">
+  import StarRating from "svelte-star-rating";
+  const config = {
+    showText: true,
+  };
 </script>
 
 <div class="card-container">
-  <div>FOTO DA OBRA</div>
-  <div>
-    <div>Nome: {"Chainsaw Man"}</div>
-    <div>Nota: </div>
+  <img src={"./cs.jpg"} alt={"Chainsaw Man"} />
+  <div class="card-info">
+    <div>{"Chainsaw Man"}</div>
+    <div><StarRating rating={2.5} {config} /></div>
   </div>
 </div>
 
@@ -13,7 +17,13 @@
   .card-container {
     background-color: pink;
     display: flex;
-    justify-content: space-between;
-    padding: 10px 10px;
+
+    & > img {
+      width: 100px;
+    }
+
+    & > .card-info {
+      padding: 10px 10px;
+    }
   }
 </style>
