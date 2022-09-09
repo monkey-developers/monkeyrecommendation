@@ -10,7 +10,7 @@
   <img src={"./cs.jpg"} alt={"Chainsaw Man"} />
   <div class="card-info">
     <div class="name">{"Chainsaw Man"}</div>
-    <StarRating rating={4} {config} />
+    <StarRating rating={2.2} {config} />
     <div class="description">
       {"Anime sobre Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae a neque impedit laudantium"}
     </div>

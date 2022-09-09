@@ -1,6 +1,7 @@
 <script lang="ts">
   import Navbar from "../lib/Navbar.svelte";
   import Card from "../lib/Card.svelte";
+
 </script>
 
 <div>
@@ -45,5 +46,9 @@
         padding: 12px 50px;
       }
     }
+  }
+
+  .nomeDOCRA{
+    color: white;
   }
 </style>
