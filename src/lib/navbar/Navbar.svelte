@@ -1,6 +1,3 @@
-<script lang="ts">
-</script>
-
 <div class="navbar-container">
   <div class="title">Monkey<span>recomendation</span></div>
   <div class="made-by">
@@ -14,7 +11,7 @@
   @import "../../variables.scss";
   .navbar-container {
     padding: 20px 20px;
-    color: #f4f4f5;
+    color: $lightColor;
     font-family: Rubik;
 
     & > .title {
