@@ -9,7 +9,8 @@
   <img src={"./cs.jpg"} alt={"Chainsaw Man"} />
   <div class="card-info">
     <div>{"Chainsaw Man"}</div>
-    <div><StarRating rating={2.5} {config} /></div>
+    <div>Recomendacao: {"Zimbas zimbas"}</div>
+    <StarRating rating={2.5} {config} />
   </div>
 </div>
 

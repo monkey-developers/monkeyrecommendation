@@ -5,16 +5,42 @@
 
 <div>
   <Navbar />
-  <div class="list-container">
-    <Card />
+  <div class="content">
+    <div class="list-container">
+      <Card />
+    </div>
+    <button>Recomendar</button>
   </div>
 </div>
 
 <style lang="scss">
-  .list-container {
-    background-color: white;
-    padding: 25px;
-    margin-left: 20px;
-    margin-right: 20px;
+  @import "../variables.scss";
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    & > .list-container {
+      background-color: white;
+      padding: 25px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    & > button {
+      background-color: $mainColor;
+      border: 0;
+      padding: 10px 40px;
+      cursor: pointer;
+      text-transform: uppercase;
+      color: white;
+      border-radius: 8px;
+
+      &:hover {
+        padding: 12px 50px;
+      }
+    }
   }
 </style>
