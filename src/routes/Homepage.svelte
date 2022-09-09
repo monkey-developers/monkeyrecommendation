@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Navbar from "../lib/navbar/Navbar.svelte";
-  import Card from "../lib/card/Card.svelte";
+  import Navbar from "../lib/Navbar.svelte";
+  import Card from "../lib/Card.svelte";
 </script>
 
 <div>

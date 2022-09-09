@@ -8,7 +8,7 @@
 </div>
 
 <style lang="scss">
-  @import "../../variables.scss";
+  @import "../variables.scss";
   .navbar-container {
     padding: 20px 20px;
     color: $lightColor;
@@ -27,6 +27,11 @@
       & > a {
         text-decoration: none;
         color: $mainColor;
+
+        &:hover {
+          color: white;
+          text-decoration: underline;
+        }
       }
     }
   }

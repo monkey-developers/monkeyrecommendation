@@ -1,5 +1,6 @@
 <script lang="ts">
   import StarRating from "svelte-star-rating";
+
   const config = {
     showText: true,
   };
@@ -11,6 +12,9 @@
     <div>{"Chainsaw Man"}</div>
     <div>Recomendacao: {"Zimbas zimbas"}</div>
     <StarRating rating={2.5} {config} />
+    <div class="description">
+      {"Anime sobre Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae a neque impedit laudantium"}
+    </div>
   </div>
 </div>
 
@@ -24,7 +28,11 @@
     }
 
     & > .card-info {
-      padding: 10px 10px;
+      padding: 10px 5px;
+
+      & > .description {
+        font-size: 0.8rem;
+      }
     }
   }
 </style>
