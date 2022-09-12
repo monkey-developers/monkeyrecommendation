@@ -47,8 +47,4 @@
       }
     }
   }
-
-  .nomeDOCRA{
-    color: white;
-  }
 </style>
