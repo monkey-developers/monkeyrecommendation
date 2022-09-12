@@ -8,7 +8,7 @@
   <Navbar />
   <div class="content">
     <div class="list-container">
-      <div><Card category={"sim"} image={'./cs.jpg'} name={"Chainsaw Man"} rate={3.5} description={"homi da serra eletrica"} by={"Udyr"} /></div>
+      <div><Card category={"sim"} image={'./cs.jpg'} name={"Chainsaw Man"} rate={3.5} description={"homi da serra eletrica fgsdfsdfsdfsdffsfsdfdgdfgdfgfdgdgdfgdfgdsfdfsdf"} by={"Wilson"} /></div>
       <div><Card /></div>
     </div>
     <button>Recomendar</button>
