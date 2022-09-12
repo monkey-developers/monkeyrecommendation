@@ -1,24 +1,44 @@
 <script lang="ts">
   import StarRating from "svelte-star-rating";
 
+  export let category:string ="UNDEFINED";  
+  export let image:string;
+  export let name:string = "UNNAMED";
+  export let rate:number = 0;
+  export let description:string = "";
+  export let by:string = "UNKNOWN";
+
   const config = {
     showText: true,
   };
 </script>
-
+<div class="card">
+  <div class="category">{category}</div>
 <div class="card-container">
-  <img src={"./cs.jpg"} alt={"Chainsaw Man"} />
+  <img src={image} alt={name} />
   <div class="card-info">
-    <div class="name">{"Chainsaw Man"}</div>
-    <StarRating rating={2.2} {config} />
+    <div class="name">{name}</div>
+    <StarRating rating={rate} {config} />
     <div class="description">
-      {"Anime sobre Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae a neque impedit laudantium"}
+      {description}
     </div>
-    <div class="recommended">By {"Icaro"}</div>
+    <div class="recommended">By {by}</div>
   </div>
+</div>
 </div>
 
 <style lang="scss">
+  .card{
+    display: flex;
+    & > .category{
+      writing-mode:vertical-rl;
+      color: white;
+      text-align: center;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
   .card-container {
     background-color: white;
     display: flex;
