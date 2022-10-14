@@ -9,9 +9,8 @@
   <div class="content">
     <div class="list-container">
       <div><Card category={"sim"} image={'./cs.jpg'} name={"Chainsaw Man"} rate={3.5} description={"homi da serra eletrica fgsdfsdfsdfsdffsfsdfdgdfgdfgfdgdgdfgdfgdsfdfsdf"} by={"Wilson"} /></div>
-      <div><Card /></div>
     </div>
-    <button>Recomendar</button>
+    <button>Recommend</button>
   </div>
 </div>
 
@@ -41,6 +40,7 @@
       text-transform: uppercase;
       color: white;
       border-radius: 8px;
+      text-transform: uppercase;
 
       &:hover {
         padding: 12px 50px;

@@ -1,0 +1,17 @@
+{
+  "name": "backrecomendation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsnd --respawn src/server.ts"
+  },
+  "author": "Igor",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "typescript": "^4.8.4",
+    "uuidv4": "^6.2.13"
+  }
+}
