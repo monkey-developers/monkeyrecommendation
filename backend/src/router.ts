@@ -1,5 +1,6 @@
 import Router from 'express'
 import multer from 'multer'
+import path from 'path'
 
 const router = Router()
 
@@ -15,8 +16,12 @@ const storage = multer.diskStorage({
 const upload = multer({ storage })
 
 router.post('/recommendation-image', upload.single('foto'), (req, res) => {
-    const { nome, site } = req.body;
-    res.json({ nome, site });
+    const filepath = path.resolve(req.file.path)
+    return res.json({ filepath })
 });
+
+router.post('/recommendation', (req, res) => {
+    
+})
 
 export { router }
