@@ -10,8 +10,8 @@
 
   const config = {
     showText: true,
-    emptyColor: '#c1b8c2',
-    fullColor: '#eb0988'
+    emptyColor: "#c1b8c2",
+    fullColor: "#eb0988",
   };
 </script>
 
@@ -31,6 +31,8 @@
 </div>
 
 <style lang="scss">
+  @import "../variables.scss";
+
   .card {
     display: flex;
     & > .category {
@@ -45,7 +47,7 @@
   .card-container {
     background-color: white;
     display: flex;
-    border-radius: 8px;
+    border-radius: $rounded;
     position: relative;
 
     & > img {

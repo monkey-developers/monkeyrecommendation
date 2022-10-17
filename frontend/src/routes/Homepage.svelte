@@ -1,18 +1,23 @@
 <script lang="ts">
-  import Navbar from "../lib/Navbar.svelte";
+  import { Link } from "svelte-navigator";
   import Card from "../lib/Card.svelte";
-
 </script>
 
-<div>
-  <Navbar />
-  <div class="content">
-    <div class="list-container">
-      <div><Card category={"sim"} image={'./cs.jpg'} name={"Chainsaw Man"} rate={3.5} description={"homi da serra eletrica fgsdfsdfsdfsdffsfsdfdgdfgdfgfdgdgdfgdfgdsfdfsdf"} by={"Wilson"} /></div>
+<section class="content">
+  <div class="list-container">
+    <div>
+      <Card
+        category={"sim"}
+        image={"./cs.jpg"}
+        name={"Chainsaw Man"}
+        rate={3.5}
+        description={"homi da serra eletrica fgsdfsdfsdfsdffsfsdfdgdfgdfgfdgdgdfgdfgdsfdfsdf"}
+        by={"Wilson"}
+      />
     </div>
-    <button>Recommend</button>
   </div>
-</div>
+  <Link to="/recommend" class="link-button">Recommend</Link>
+</section>
 
 <style lang="scss">
   @import "../variables.scss";
@@ -32,7 +37,7 @@
       gap: 30px;
     }
 
-    & > button {
+    & > :global(a) {
       background-color: $mainColor;
       border: 0;
       padding: 10px 40px;
@@ -41,6 +46,7 @@
       color: white;
       border-radius: 8px;
       text-transform: uppercase;
+      text-decoration: none;
 
       &:hover {
         padding: 12px 50px;
