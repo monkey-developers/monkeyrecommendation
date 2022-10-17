@@ -1,47 +1,78 @@
 <script lang="ts">
   import { Link } from "svelte-navigator";
-  import Input from "../lib/Input.svelte";
+
+  export const data = {
+    masterpiece: "",
+    rate: 0,
+    author: "",
+    description: "",
+    category: "",
+  };
+
+  export const handleClick = () => {
+    event.preventDefault();
+    console.log(data);
+  };
 </script>
 
 <section>
   <form>
-    <Input
-      forVal="masterpiece"
-      label="Masterpiece:"
-      type="text"
-      id="masterpiece"
-      placeholder="Masterpiece"
-    />
-    <Input
-      forVal="rating"
-      label="Rating:"
-      type="number"
-      id="rating"
-      placeholder="Rating"
-    />
-    <Input
-      forVal="description"
-      label="Description:"
-      type="text"
-      id="description"
-      placeholder="Description"
-    />
-    <Input
-      forVal="author"
-      label="Author:"
-      type="text"
-      id="author"
-      placeholder="Author"
-    />
-    <Input
-      forVal="type"
-      label="Type:"
-      type="text"
-      id="type"
-      placeholder="Type"
-    />
+    <div class="input-container">
+      <label for="masterpiece" class="label">Masterpiece:</label>
+      <input
+        class="input"
+        type="text"
+        id="masterpiece"
+        placeholder="Masterpiece"
+        bind:value={data.masterpiece}
+      />
+    </div>
+
+    <div class="input-container">
+      <label for="rate" class="label">Rating:</label>
+      <input
+        class="input"
+        type="number"
+        id="rate"
+        placeholder="Rating"
+        bind:value={data.rate}
+      />
+    </div>
+
+    <div class="input-container">
+      <label for="author" class="label">Author:</label>
+      <input
+        class="input"
+        type="text"
+        id="author"
+        placeholder="Author"
+        bind:value={data.author}
+      />
+    </div>
+
+    <div class="input-container">
+      <label for="description" class="label">Description:</label>
+      <input
+        class="input"
+        type="text"
+        id="description"
+        placeholder="Description"
+        bind:value={data.description}
+      />
+    </div>
+
+    <div class="input-container">
+      <label for="category" class="label">Category:</label>
+      <input
+        class="input"
+        type="text"
+        id="category"
+        placeholder="Category"
+        bind:value={data.category}
+      />
+    </div>
     <input type="file" />
-    <button>Recommend</button>
+    <button on:click={handleClick}>Recommend</button>
   </form>
   <Link to="/" class="link-button">Back</Link>
 </section>
@@ -67,11 +98,42 @@
       padding: 25px;
       border-radius: $rounded;
 
+      & > .input-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        & > .label {
+          text-transform: uppercase;
+          cursor: pointer;
+        }
+
+        & > .input {
+          background-color: transparent;
+          border: 0;
+          border-bottom: 1px solid $mainColor;
+          padding: 5px;
+          cursor: pointer;
+
+          &:focus {
+            outline: none;
+            border-left: 5px solid $mainColor;
+            border-color: $mainColor;
+          }
+        }
+      }
+
       & > button {
         background: $darkColor;
         border: 0;
         color: white;
-        padding: 10px;
+        padding: 10px 20px;
+        border-radius: $rounded;
+        cursor: pointer;
+        text-transform: uppercase;
+        &:hover {
+          padding: 11px 25px;
+        }
       }
     }
 
