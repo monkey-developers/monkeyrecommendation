@@ -1,6 +1,7 @@
 import Router from 'express'
 import multer from 'multer'
 import path from 'path'
+// import { client } from './server'
 
 const router = Router()
 const recommends = []
@@ -33,12 +34,16 @@ router.post('/recommendation', (req, res) => {
     }
 
     recommends.push(recommendData)
-    
+
     return res.status(201).json(recommendData)
 })
 
 router.get('/recommendations-list', (req, res) => {
     return res.json(recommends)
 })
+
+// client.query(`Select * from recommends`, (err, res) => {
+//     return res.rows
+// })
 
 export { router }
