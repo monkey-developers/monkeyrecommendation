@@ -1,0 +1,26 @@
+@import "../variables.scss";
+
+.card {
+  display: flex;
+  position: relative;
+  width: 40rem;
+  border: 1px solid $main-1000;
+  gap: 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+
+  .card-data {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    .data-title {
+      color: $main-1000;
+    }
+  }
+
+  .card-author {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.5rem;
+  }
+}

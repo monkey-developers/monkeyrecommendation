@@ -1,3 +1,4 @@
+import "./cardStyle.scss";
 import undefined from "../assets/undefined.jpeg";
 import { Rating } from "react-simple-star-rating";
 import { useState, useEffect } from "react";
@@ -9,15 +10,25 @@ export const Card = () => {
     setRating(rate);
   };
 
-  useEffect(() => {
-    console.log(rating)
-  })
-  
-
   return (
-    <div>
+    <div className="card">
       <img src={undefined} />
-      <Rating onClick={handleRating} allowFraction={true} initialValue={2.5} />
+      <div className="card-data">
+        <h1 className="data-title">CHAINSAW MAN</h1>
+        <div>
+          <Rating
+            onClick={handleRating}
+            allowFraction={true}
+            initialValue={2.5}
+            readonly={true}
+          />
+          <span>TEXTO</span>
+        </div>
+        <p>DESCRIPTION</p>
+      </div>
+      <span className="card-author">
+        By: <span>Igor</span>
+      </span>
     </div>
   );
 };

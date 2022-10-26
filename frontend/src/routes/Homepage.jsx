@@ -3,7 +3,7 @@ import { Card } from "../components/Card";
 
 export const Homepage = () => {
   return(
-    <section>
+    <section className="homepage-container">
       <Card />
     </section>
   )
