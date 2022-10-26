@@ -3,7 +3,7 @@ import undefined from "../assets/undefined.jpeg";
 import { Rating } from "react-simple-star-rating";
 import { useState, useEffect } from "react";
 
-export const Card = () => {
+export const Card = ({ img, masterpiece = "UNKNOWN", rate = 0, description = "...", category = "NO", author = "UNNAMED" }) => {
   const [rating, setRating] = useState(0);
 
   const handleRating = (rate) => {
@@ -11,24 +11,27 @@ export const Card = () => {
   };
 
   return (
-    <div className="card">
-      <img src={undefined} />
-      <div className="card-data">
-        <h1 className="data-title">CHAINSAW MAN</h1>
-        <div>
-          <Rating
-            onClick={handleRating}
-            allowFraction={true}
-            initialValue={2.5}
-            readonly={true}
-          />
-          <span>TEXTO</span>
+    <article className="article">
+      <span className="category">{category}</span>
+      <div className="card">
+        <img src={img || undefined} />
+        <div className="card-data">
+          <h1 className="data-title">{masterpiece}</h1>
+          <div>
+            <Rating
+              onClick={handleRating}
+              allowFraction={true}
+              initialValue={rate}
+              readonly={true}
+            />
+            <span>{rate}/5</span>
+          </div>
+          <p>{description}</p>
         </div>
-        <p>DESCRIPTION</p>
+        <span className="card-author">
+          By: <span>{author}</span>
+        </span>
       </div>
-      <span className="card-author">
-        By: <span>Igor</span>
-      </span>
-    </div>
+    </article>
   );
 };

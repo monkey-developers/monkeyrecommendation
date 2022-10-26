@@ -1,12 +1,9 @@
 @import '../variables.scss';
 
-.homepage-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.register-container {
     gap: 2rem;
 
-    & > a {
+    &>a {
         text-decoration: none;
         background-color: $main-1000;
         color: $white;

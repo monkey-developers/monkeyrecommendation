@@ -5,11 +5,11 @@ export const Navbar = () => {
     <nav>
       <div className="main-name">
         <span>Monkey</span>
-        <a className="name-link">recommendation</a>
+        <a href="https://github.com/monkey-developers/monkeyrecommendation" target={"_blank"} className="name-link">recommendation</a>
       </div>
       <div className="secondary-name">
         <span>Made by:</span>
-        <span className="name-link"> iguoliveira</span>
+        <a href="https://github.com/iguoliveira" target={"_blank"} className="name-link"> iguoliveira</a>
       </div>
     </nav>
   );

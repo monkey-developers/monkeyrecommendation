@@ -1,16 +1,37 @@
 @import "../variables.scss";
 
+.article {
+  display: flex;
+  align-items: center;
+  color: $white;
+}
+
+.category {
+  writing-mode: vertical-lr;
+  color: $main-1000;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
 .card {
   display: flex;
   position: relative;
   width: 40rem;
-  border: 1px solid $main-1000;
-  gap: 1rem;
   border-radius: 0 0.5rem 0.5rem 0;
+  color: $white;
 
   .card-data {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    border: 1px solid $main-1000;
+    border-left: 0;
+    width: 100%;
+    padding-left: 0.85rem;
+
+    &:hover {
+      background: rgba(199, 28, 170, 0.25);
+      transition: 250ms ease;
+    }
 
     .data-title {
       color: $main-1000;
