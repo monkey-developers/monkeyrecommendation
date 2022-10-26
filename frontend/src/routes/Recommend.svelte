@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Link } from "svelte-navigator";
-
+  let result;
   export const data = {
     masterpiece: "",
     rate: 0,
@@ -9,14 +9,23 @@
     category: "",
   };
 
-  export const handleClick = () => {
+  export const handleClick = async () => {
     event.preventDefault();
-    console.log(data);
+    const res = await fetch("http://localhost:8000/recommendation", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "content-type": "application/json",
+      },
+    });
+
+    const json = await res.json();
+    result = JSON.stringify(json);
   };
 </script>
 
 <section>
-  <form>
+  <form on:submit={handleClick}>
     <div class="input-container">
       <label for="masterpiece" class="label">Masterpiece:</label>
       <input
@@ -72,7 +81,7 @@
       />
     </div>
     <input type="file" />
-    <button on:click={handleClick}>Recommend</button>
+    <button type="submit">Recommend</button>
   </form>
   <Link to="/" class="link-button">Back</Link>
 </section>
