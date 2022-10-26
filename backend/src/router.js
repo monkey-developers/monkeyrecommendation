@@ -32,8 +32,7 @@ router.post('/recommendation', (req, res) => {
         description,
         category
     };
-    let sim = recommends.push(recommendData);
-    console.log(req.body);
+    recommends.push(recommendData);
     return res.status(201).json(recommendData);
 });
 router.get('/recommendations-list', (req, res) => {
