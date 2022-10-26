@@ -1,20 +1,23 @@
 import "./homepageStyle.scss";
 import { Card } from "../components/Card";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useQuery } from 'react-query'
+import { fetchRecommendations } from "../fetchers/recommendations"
 
 export const Homepage = () => {
-  const [recommends, setRecommends] = useState([{}])
+  const { data, isLoading, error } = useQuery(['recommend'], fetchRecommendations)
 
-  useEffect(() => {
-    fetch('http://localhost:8080/recommendations-list')
-      .then((res) => res.json())
-      .then(({ recommends }) => setRecommends(recommends))
-  }, [])
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div>{error}</div>
+  }
 
   return (
     <section className="homepage-container">
-      {recommends.map((item, index) => {
+      {data.recommends.map((item, index) => {
         return (
           <div key={index}><Card masterpiece={item.masterpiece} rate={item.rate} description={item.description} category={item.category} author={item.author} /></div>
         )

@@ -1,15 +1,8 @@
 import "./cardStyle.scss";
 import undefined from "../assets/undefined.jpeg";
 import { Rating } from "react-simple-star-rating";
-import { useState, useEffect } from "react";
 
 export const Card = ({ img, masterpiece = "UNKNOWN", rate = 0, description = "...", category = "NO", author = "UNNAMED" }) => {
-  const [rating, setRating] = useState(0);
-
-  const handleRating = (rate) => {
-    setRating(rate);
-  };
-
   return (
     <article className="article">
       <span className="category">{category}</span>
@@ -19,7 +12,6 @@ export const Card = ({ img, masterpiece = "UNKNOWN", rate = 0, description = "..
           <h1 className="data-title">{masterpiece}</h1>
           <div>
             <Rating
-              onClick={handleRating}
               allowFraction={true}
               initialValue={rate}
               readonly={true}

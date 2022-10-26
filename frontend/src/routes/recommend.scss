@@ -1,7 +1,56 @@
 @import '../variables.scss';
 
 .register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
+
+    &>form {
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.75rem;
+        border-radius: $rounded;
+
+        &>input {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid $black;
+            padding: 0.5rem;
+
+            &:hover {
+                background-color: rgb(241, 241, 241);
+            }
+
+            &:focus {
+                outline: none;
+                border-left: 4px solid $main-1000;
+                border-color: $main-1000;
+            }
+
+        }
+
+        &>button {
+            background-color: transparent;
+            border: 1px solid black;
+            border-radius: $rounded;
+            padding: 0.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            width: 50%;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $black;
+                color: $white;
+                transition: 350ms ease;
+            }
+        }
+    }
 
     &>a {
         text-decoration: none;
@@ -10,7 +59,7 @@
         padding: 1rem;
         padding-left: 2.5rem;
         padding-right: 2.5rem;
-        border-radius: 0.5rem;
+        border-radius: $rounded;
         text-transform: uppercase;
         font-weight: bolder;
 
