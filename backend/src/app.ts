@@ -1,6 +1,5 @@
 import express from 'express'
 import { router } from './router'
-// import { OpenDB } from './config'
 import { db } from './config'
 const cors = require('cors')
 
@@ -18,6 +17,5 @@ createTable()
 app.use(express.json())
 app.use(cors())
 app.use(router)
-
 
 export { app }
