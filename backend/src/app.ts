@@ -5,7 +5,7 @@ const cors = require('cors')
 
 export const createTable = async () => {
     db.serialize(() => {
-        db.exec('CREATE TABLE IF NOT EXISTS Recommends ( id INTEGER PRIMARY KEY, masterpiece TEXT, rate NUMERIC, author TEXT, description TEXT, category TEXT )')
+        db.exec('CREATE TABLE IF NOT EXISTS Recommends ( id INTEGER PRIMARY KEY, masterpiece TEXT, rate NUMERIC, author TEXT, description TEXT, category TEXT, photo TEXT)')
     })
 }
 

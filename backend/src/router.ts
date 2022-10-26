@@ -16,8 +16,12 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
-router.post('/recommendation-image', upload.single('foto'), (req, res) => {
+router.patch('/recommendation-image', upload.single('foto'), (req, res) => {
+    const { id } = req.body
     const filepath = path.resolve(req.file.path)
+    db.serialize(() => {
+        db.run(`UPDATE Recommends SET photo = ${req.file.path} WHERE id = ${id}`)
+    })
     return res.json({ filepath })
 });
 
