@@ -1,0 +1,28 @@
+@import "../variables.scss";
+
+nav {
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .name-link {
+    text-decoration: none;
+    color: $main-1000;
+    cursor: pointer;
+
+    &:hover {
+      color: $main-500;
+    }
+  }
+
+  .main-name {
+    font-size: 3rem;
+  }
+
+  .secondary-name {
+    font-size: 2rem;
+  }
+}

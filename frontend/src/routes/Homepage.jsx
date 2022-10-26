@@ -1,7 +1,10 @@
-import './homepageStyle.scss'
+import "./homepageStyle.scss";
+import { Card } from "../components/Card";
 
 export const Homepage = () => {
-    return(
-        <div>salve</div>
-    )
-}
+  return(
+    <section>
+      <Card />
+    </section>
+  )
+};
