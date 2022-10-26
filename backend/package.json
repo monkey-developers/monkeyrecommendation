@@ -14,6 +14,8 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "multer": "^1.4.5-lts.1",
+    "sqlite": "^4.1.2",
+    "sqlite3": "^5.1.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.8.4",
     "uuidv4": "^6.2.13"

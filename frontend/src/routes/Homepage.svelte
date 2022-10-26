@@ -1,20 +1,35 @@
 <script lang="ts">
   import { Link } from "svelte-navigator";
   import Card from "../lib/Card.svelte";
+  let user = [];
+
+  const GetRecommends = (async () => {
+    const res = await fetch("http://localhost:8080/recommendations-list").then(
+      (res) => {
+        return res.json();
+      }
+    );
+  })();
 </script>
 
 <section class="content">
   <div class="list-container">
-    <div>
-      <Card
-        category={"sim"}
-        image={"./cs.jpg"}
-        name={"Chainsaw Man"}
-        rate={3.5}
-        description={"homi da serra eletrica fgsdfsdfsdfsdffsfsdfdgdfgdfgfdgdgdfgdfgdsfdfsdf"}
-        by={"Wilson"}
-      />
-    </div>
+    {#await GetRecommends}
+      <p>Waiting...</p>
+    {:then data}
+      {#each data as item, index (user)}
+        <div>
+          <Card
+            category={item.category}
+            image={"./cs.jpg"}
+            name={item.masterpiece}
+            rate={item.rate}
+            description={item.description}
+            by={item.author}
+          />
+        </div>
+      {/each}
+    {/await}
   </div>
   <Link to="/recommend" class="link-button">Recommend</Link>
 </section>

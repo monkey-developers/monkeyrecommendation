@@ -11,7 +11,7 @@
 
   export const handleClick = async () => {
     event.preventDefault();
-    const res = await fetch("http://localhost:8000/recommendation", {
+    const res = await fetch("http://localhost:8080/recommendation", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

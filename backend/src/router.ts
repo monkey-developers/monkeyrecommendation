@@ -1,10 +1,9 @@
 import Router from 'express'
 import multer from 'multer'
 import path from 'path'
-// import { client } from './server'
+import { db } from './config'
 
 const router = Router()
-const recommends = []
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -24,26 +23,20 @@ router.post('/recommendation-image', upload.single('foto'), (req, res) => {
 
 router.post('/recommendation', (req, res) => {
     const { masterpiece, rate, author, description, category } = req.body
-
-    const recommendData = {
-        masterpiece,
-        rate,
-        author,
-        description,
-        category
-    }
-
-    recommends.push(recommendData)
-
-    return res.status(201).json(recommendData)
+    db.serialize(() => {
+        db.run('INSERT INTO Recommends ( masterpiece, rate, author, description, category ) VALUES (?,?,?,?,?)', [masterpiece, rate, author, description, category])
+    })
 })
 
-router.get('/recommendations-list', (req, res) => {
-    return res.json(recommends)
+router.get('/recommendations-list', async (req, res) => {
+    db.serialize(() => {
+        db.all(`SELECT * FROM Recommends`,
+            function (error, rows) {
+                if (error) return res.status(500).json({ error, msg: error.message })
+                console.log(rows)
+                res.json({ recommends: rows })
+            })
+    })
 })
-
-// client.query(`Select * from recommends`, (err, res) => {
-//     return res.rows
-// })
 
 export { router }
