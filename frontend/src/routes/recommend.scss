@@ -1,70 +1,127 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
 .register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  & > a {
+    text-decoration: none;
+    background-color: $main-1000;
+    color: $white;
+    padding: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    border-radius: $rounded;
+    text-transform: uppercase;
+    font-weight: bolder;
+    box-shadow: 2px 5px 5px $black;
+
+    &:hover {
+      background-color: $main-300;
+      box-shadow: 12px 12px 2px 1px $black;
+      transition: $transiton ease-in-out;
+    }
+  }
+
+  & > form {
+    background-color: $custom-white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+    padding: 1.75rem;
+    border-radius: $rounded;
+    box-shadow: 2px 2px 5px $white;
 
-    &>form {
-        background-color: $white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        padding: 1.75rem;
-        border-radius: $rounded;
+    & > input {
+      background-color: transparent;
+      border: 0;
+      border-bottom: 1px solid $black;
+      padding: 0.5rem;
 
-        &>input {
-            background-color: transparent;
-            border: 0;
-            border-bottom: 1px solid $black;
-            padding: 0.5rem;
+      &:hover {
+        background-color: $input-hover;
+      }
 
-            &:hover {
-                background-color: rgb(241, 241, 241);
-            }
-
-            &:focus {
-                outline: none;
-                border-left: 4px solid $main-1000;
-                border-color: $main-1000;
-            }
-
-        }
-
-        &>button {
-            background-color: transparent;
-            border: 1px solid black;
-            border-radius: $rounded;
-            padding: 0.5rem;
-            text-transform: uppercase;
-            font-weight: bold;
-            width: 50%;
-            cursor: pointer;
-
-            &:hover {
-                background-color: $black;
-                color: $white;
-                transition: 350ms ease;
-            }
-        }
+      &:focus {
+        outline: none;
+        border-left: 4px solid $main-1000;
+        border-bottom: 2px solid $main-1000;
+        transition: $transiton;
+      }
     }
 
-    &>a {
-        text-decoration: none;
-        background-color: $main-1000;
+    & > select {
+      background-color: transparent;
+      width: 100%;
+      padding: 0.25rem;
+      border-radius: $rounded;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $input-hover;
+      }
+
+      &:focus {
+        outline: none;
+        border: 2px solid $main-1000;
+        transition: $transiton;
+      }
+    }
+
+    & > textarea {
+      resize: none;
+      width: 100%;
+      letter-spacing: 1px;
+      padding: 0.5rem;
+      max-width: 100%;
+      line-height: 1.5;
+      border-radius: $rounded;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+      box-shadow: 1px 1px 1px #999;
+      height: 10rem;
+      background-color: transparent;
+
+      &:hover {
+        background-color: $input-hover;
+      }
+
+      &:focus {
+        outline: none;
+        border-bottom: 2px solid $main-1000;
+        border-left: 4px solid $main-1000;
+        border-radius: 0;
+        border-top-right-radius: $rounded;
+        transition: $transiton;
+      }
+    }
+
+    & > button {
+      background-color: transparent;
+      border: 1px solid black;
+      border-radius: $rounded;
+      padding: 0.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      width: 50%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $black;
         color: $white;
-        padding: 1rem;
-        padding-left: 2.5rem;
-        padding-right: 2.5rem;
-        border-radius: $rounded;
-        text-transform: uppercase;
-        font-weight: bolder;
+        transition: $transiton;
+      }
 
-        &:hover {
-            background-color: $main-700;
-        }
+      &:focus {
+        outline: none;
+        border: 2px solid $black;
+        transition: $transiton;
+      }
     }
+  }
 }
