@@ -34,7 +34,7 @@
     gap: 1rem;
     padding: 1.75rem;
     border-radius: $rounded;
-    box-shadow: 2px 2px 5px $white;
+    box-shadow: $container-shadow;
 
     & > input {
       background-color: transparent;
