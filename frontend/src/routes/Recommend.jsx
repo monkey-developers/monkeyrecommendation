@@ -3,11 +3,19 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import { useMutation, useQueryClient } from "react-query";
-import { postRecommendations } from "../fetchers/recommendations";
+import {
+  postRecommendations,
+  postImageRecommendations,
+} from "../fetchers/recommendations";
 
 export const Recommend = () => {
   const client = useQueryClient();
   const mutation = useMutation(postRecommendations, {
+    onSuccess: () => {
+      client.invalidateQueries("recommend");
+    },
+  });
+  const imageMutation = useMutation(postImageRecommendations, {
     onSuccess: () => {
       client.invalidateQueries("recommend");
     },
@@ -19,6 +27,7 @@ export const Recommend = () => {
     description: "",
     category: "Anime",
   });
+  const [selectedFile, setSelectedFile] = useState();
 
   const handleChange = (evt) => {
     setInputs({
@@ -34,9 +43,16 @@ export const Recommend = () => {
     });
   };
 
+  const handlePhoto = (evt) => {
+    setSelectedFile(evt.target.files[0]);
+  };
+
   const handleSubmit = () => {
     event.preventDefault();
     mutation.mutate(inputs);
+    const formData = new FormData();
+    formData.append("foto", selectedFile);
+    imageMutation.mutate(formData);
   };
 
   return (
@@ -58,6 +74,12 @@ export const Recommend = () => {
           placeholder="Recommended by"
           value={inputs.author}
           onChange={(evt) => handleChange(evt)}
+          required
+        />
+        <input
+          name="photo"
+          type="file"
+          onChange={(evt) => handlePhoto(evt)}
           required
         />
         <textarea

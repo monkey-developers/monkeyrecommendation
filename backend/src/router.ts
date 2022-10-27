@@ -16,13 +16,14 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage })
 
-router.patch('/recommendation-image', upload.single('foto'), (req, res) => {
-    const { id } = req.body
+router.post('/recommendation-image', upload.single('foto'), (req, res) => {
+    // const { id } = req.body
     const filepath = path.resolve(req.file.path)
-    db.serialize(() => {
-        db.run(`UPDATE Recommends SET photo = ${req.file.path} WHERE id = ${id}`)
-    })
-    return res.json({ filepath })
+    console.log(filepath)
+    // db.serialize(() => {
+    //     db.run(`UPDATE Recommends SET photo = ${req.file.path} WHERE id = ${id}`)
+    // })
+    // return res.json({ filepath })
 });
 
 router.post('/recommendation', (req, res) => {
@@ -37,7 +38,6 @@ router.get('/recommendations-list', async (req, res) => {
         db.all(`SELECT * FROM Recommends`,
             function (error, rows) {
                 if (error) return res.status(500).json({ error, msg: error.message })
-                console.log(rows)
                 res.json({ recommends: rows })
             })
     })
