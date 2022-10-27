@@ -6,27 +6,42 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: $white;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
-
-  .name-link {
-    text-decoration: none;
-    color: $main-1000;
-    cursor: pointer;
-
-    &:hover {
-      color: $main-500;
-    }
-  }
 
   .main-name {
     font-size: 3rem;
     font-weight: bold;
+
+    & > a {
+      text-decoration: none;
+      color: $white;
+
+      &:hover {
+        opacity: 0.5;
+        transition: 200ms ease;
+      }
+
+      & > .project-name {
+        color: $main-1000;
+      }
+    }
   }
 
   .secondary-name {
     font-size: 2rem;
     opacity: 0.8;
+    color: $white;
+
+    .name-link {
+      text-decoration: none;
+      color: $main-1000;
+      cursor: pointer;
+
+      &:hover {
+        color: $hover-pink;
+        transition: 200ms ease;
+      }
+    }
   }
 }

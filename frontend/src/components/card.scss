@@ -27,7 +27,7 @@
     padding-left: 0.85rem;
 
     &:hover {
-      background: rgba(247, 155, 231, 0.25);
+      background: $hover-pink;
       transition: 250ms ease;
       border-radius: $rounded;
     }
