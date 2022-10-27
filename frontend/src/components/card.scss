@@ -3,7 +3,6 @@
 .article {
   display: flex;
   align-items: center;
-  color: $white;
 }
 
 .category {
@@ -11,37 +10,42 @@
   color: $main-1000;
   font-size: 2.5rem;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .card {
   display: flex;
   position: relative;
   width: 40rem;
-  border-radius: 0 0.5rem 0.5rem 0;
-  color: $white;
+  border-radius: 0 $rounded $rounded 0;
+  background-color: $custom-white;
 
   .card-data {
+    width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    border: 1px solid $main-1000;
-    border-left: 0;
-    width: 100%;
     padding-left: 0.85rem;
 
     &:hover {
-      background: rgba(199, 28, 170, 0.25);
+      background: rgba(247, 155, 231, 0.25);
       transition: 250ms ease;
+      border-radius: $rounded;
     }
 
     .data-title {
       color: $main-1000;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.5em;
     }
   }
 
   .card-author {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 0.5rem;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    text-transform: lowercase;
+    opacity: 0.8;
+    font-size: 0.85em;
   }
 }

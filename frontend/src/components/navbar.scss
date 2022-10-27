@@ -6,7 +6,6 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   color: $white;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -23,9 +22,11 @@ nav {
 
   .main-name {
     font-size: 3rem;
+    font-weight: bold;
   }
 
   .secondary-name {
     font-size: 2rem;
+    opacity: 0.8;
   }
 }
