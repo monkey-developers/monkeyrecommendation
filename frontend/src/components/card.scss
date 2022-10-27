@@ -3,6 +3,14 @@
 .article {
   display: flex;
   align-items: center;
+  background-color: $custom-white;
+  border-radius: $rounded;
+  box-shadow: $container-shadow;
+
+  &:hover {
+    background: $hover-pink;
+    transition: $transition;
+  }
 }
 
 .category {
@@ -17,8 +25,10 @@
   display: flex;
   position: relative;
   width: 40rem;
-  border-radius: 0 $rounded $rounded 0;
-  background-color: $custom-white;
+
+  & > img {
+    user-select: none;
+  }
 
   .card-data {
     width: 100%;
@@ -26,17 +36,26 @@
     padding-bottom: 1rem;
     padding-left: 0.85rem;
 
-    &:hover {
-      background: $hover-pink;
-      transition: 250ms ease;
-      border-radius: $rounded;
-    }
-
-    .data-title {
+    & > .data-title {
       color: $main-1000;
       text-transform: uppercase;
       font-weight: bold;
       font-size: 1.5em;
+    }
+
+    & > .stars {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    & > p {
+      box-shadow: 0 0 2px black inset;
+      width: 80%;
+      padding: 0.25rem;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      letter-spacing: 1px;
     }
   }
 

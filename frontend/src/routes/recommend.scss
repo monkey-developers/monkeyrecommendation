@@ -22,7 +22,7 @@
     &:hover {
       background-color: $main-300;
       box-shadow: 12px 12px 2px 1px $black;
-      transition: $transiton ease-in-out;
+      transition: $transition;
     }
   }
 
@@ -50,7 +50,7 @@
         outline: none;
         border-left: 4px solid $main-1000;
         border-bottom: 2px solid $main-1000;
-        transition: $transiton;
+        transition: $transition;
       }
     }
 
@@ -68,7 +68,7 @@
       &:focus {
         outline: none;
         border: 2px solid $main-1000;
-        transition: $transiton;
+        transition: $transition;
       }
     }
 
@@ -97,7 +97,7 @@
         border-left: 4px solid $main-1000;
         border-radius: 0;
         border-top-right-radius: $rounded;
-        transition: $transiton;
+        transition: $transition;
       }
     }
 
@@ -114,13 +114,13 @@
       &:hover {
         background-color: $black;
         color: $white;
-        transition: $transiton;
+        transition: $transition;
       }
 
       &:focus {
         outline: none;
         border: 2px solid $black;
-        transition: $transiton;
+        transition: $transition;
       }
     }
   }

@@ -17,11 +17,11 @@ export const Card = ({
         <img src={img || undefined} />
         <div className="card-data">
           <h1 className="data-title">{masterpiece}</h1>
-          <div>
+          <div className="stars">
             <Rating allowFraction={true} initialValue={rate} readonly={true} />
             <span>{rate}/5</span>
           </div>
-          <p>{description}</p>
+          <p className="description">{description}</p>
         </div>
         <span className="card-author">{author}</span>
       </div>

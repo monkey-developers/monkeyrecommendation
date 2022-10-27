@@ -21,7 +21,7 @@
     &:hover {
       background-color: $main-300;
       box-shadow: 12px 12px 2px 1px $black;
-      transition: 200ms ease-in-out;
+      transition: $transition;
     }
   }
 }
