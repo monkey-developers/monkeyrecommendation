@@ -5,6 +5,7 @@ An easy way to save your friends group recommendations, in one place!
 # TODOS
 
 - [ ] PATCH method to add photo in backend
-- [ ] Add file input in frontend recommend form
+- [x] Add file input in frontend recommend form
 - [ ] Delete button in frontend recommendation card
-- [ ] The newer go first in list
+- [x] The newer go first in list
+- [ ] Refactor form style

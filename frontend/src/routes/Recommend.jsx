@@ -64,6 +64,7 @@ export const Recommend = () => {
           name="masterpiece"
           type="text"
           placeholder="Show name"
+          className="input"
           value={inputs.masterpiece}
           onChange={(evt) => handleChange(evt)}
           required
@@ -72,6 +73,7 @@ export const Recommend = () => {
           name="author"
           type="text"
           placeholder="Recommended by"
+          className="input"
           value={inputs.author}
           onChange={(evt) => handleChange(evt)}
           required
@@ -79,19 +81,25 @@ export const Recommend = () => {
         <input
           name="photo"
           type="file"
+          className="input-file"
           onChange={(evt) => handlePhoto(evt)}
           required
         />
         <textarea
           name="description"
           type="text"
+          className="textarea"
           placeholder="Description..."
           maxLength={255}
           value={inputs.description}
           onChange={(evt) => handleChange(evt)}
           required
         />
-        <select name="category" onChange={(evt) => handleChange(evt)}>
+        <select
+          name="category"
+          className="select"
+          onChange={(evt) => handleChange(evt)}
+        >
           <option value="anime">Anime</option>
           <option value="manga">Manga</option>
           <option value="serie">Serie</option>

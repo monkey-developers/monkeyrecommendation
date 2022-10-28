@@ -12,7 +12,7 @@
   z-index: 10;
 
   & > form {
-    background-color: $custom-white;
+    background-color: $card-background;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,68 +21,85 @@
     border-radius: $rounded;
     box-shadow: $container-shadow;
 
-    & > input {
+    & > .input {
       background-color: transparent;
       border: 0;
-      border-bottom: 1px solid $black;
+      border-bottom: 2px solid $white;
       padding: 0.5rem;
+      color: $white;
+
+      &::placeholder {
+        color: $white;
+        opacity: 0.5;
+      }
 
       &:hover {
-        background-color: $input-hover;
+        border-color: $input-hover;
+        transition: $transition;
       }
 
       &:focus {
         outline: none;
-        border-left: 4px solid $main-1000;
+        border-left: 8px solid $main-1000;
         border-bottom: 2px solid $main-1000;
         transition: $transition;
       }
     }
 
-    & > select {
-      background-color: transparent;
-      width: 100%;
-      padding: 0.25rem;
-      border-radius: $rounded;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $input-hover;
-      }
-
-      &:focus {
-        outline: none;
-        border: 2px solid $main-1000;
-        transition: $transition;
-      }
+    & > .input-file {
+      border: 0;
+      color: $white;
     }
 
-    & > textarea {
+    & > .textarea {
       resize: none;
       width: 100%;
       letter-spacing: 1px;
       padding: 0.5rem;
       max-width: 100%;
       line-height: 1.5;
-      border-radius: $rounded;
       border: 0;
-      border-bottom: 1px solid #ccc;
-      border-left: 1px solid #ccc;
-      box-shadow: 1px 1px 1px #999;
+      border-bottom: 2px solid $white;
       height: 10rem;
       background-color: transparent;
+      color: $white;
+
+      &::placeholder {
+        color: $white;
+        opacity: 0.5;
+      }
 
       &:hover {
-        background-color: $input-hover;
+        border-color: $input-hover;
       }
 
       &:focus {
         outline: none;
+        border-left: 8px solid $main-1000;
         border-bottom: 2px solid $main-1000;
-        border-left: 4px solid $main-1000;
-        border-radius: 0;
-        border-top-right-radius: $rounded;
         transition: $transition;
+      }
+    }
+
+    & > .select {
+      background-color: transparent;
+      width: 100%;
+      padding: 0.25rem;
+      cursor: pointer;
+      color: $white;
+      border: 0;
+      border-bottom: 2px solid $white;
+
+      &:hover {
+        border-color: $input-hover;
+      }
+
+      &:focus {
+        outline: none;
+        border: 2px solid $main-1000;
+        transition: $transition;
+        color: $black;
+        background-color: $white;
       }
     }
 
