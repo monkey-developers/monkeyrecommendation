@@ -35,7 +35,7 @@ router.post('/recommendation', (req, res) => {
 
 router.get('/recommendations-list', async (req, res) => {
     db.serialize(() => {
-        db.all(`SELECT * FROM Recommends`,
+        db.all(`SELECT * FROM Recommends ORDER BY id desc`,
             function (error, rows) {
                 if (error) return res.status(500).json({ error, msg: error.message })
                 res.json({ recommends: rows })
