@@ -7,6 +7,7 @@ import {
   postRecommendations,
   postImageRecommendations,
 } from "../fetchers/recommendations";
+import { ArrowLeft } from 'phosphor-react'
 
 export const Recommend = () => {
   const client = useQueryClient();
@@ -57,7 +58,6 @@ export const Recommend = () => {
 
   return (
     <article className="register-container">
-      <Link to={"/"}>back</Link>
       <form onSubmit={handleSubmit}>
         <Rating onClick={handleRating} allowFraction={true} />
         <input
@@ -100,6 +100,7 @@ export const Recommend = () => {
         </select>
         <button type="submit">Create</button>
       </form>
+      <Link to={"/"}><ArrowLeft size={40} /></Link>
     </article>
   );
 };

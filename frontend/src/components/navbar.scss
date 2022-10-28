@@ -12,6 +12,7 @@ nav {
   .main-name {
     font-size: 3rem;
     font-weight: bold;
+    font-weight: 1000;
 
     & > a {
       text-decoration: none;
@@ -29,9 +30,10 @@ nav {
   }
 
   .secondary-name {
-    font-size: 2rem;
+    font-size: 1.5rem;
     opacity: 0.8;
     color: $white;
+    text-align: right;
 
     .name-link {
       text-decoration: none;

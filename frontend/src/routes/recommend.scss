@@ -8,16 +8,15 @@
   gap: 2rem;
 
   & > a {
-    text-decoration: none;
+    display: flex;
     background-color: $main-1000;
     color: $white;
     padding: 1rem;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    border-radius: $rounded;
-    text-transform: uppercase;
-    font-weight: bolder;
+    border-radius: $circle;
     box-shadow: 2px 5px 5px $black;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
 
     &:hover {
       background-color: $main-300;

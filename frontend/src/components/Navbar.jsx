@@ -12,14 +12,13 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className="secondary-name">
-          <span>Made by:</span>
+          <span>Developed by</span>
           <a
             href="https://github.com/iguoliveira"
             target={"_blank"}
             className="name-link"
           >
-            {" "}
-            iguoliveira
+            {" <iguoliveira />"}
           </a>
         </div>
       </div>

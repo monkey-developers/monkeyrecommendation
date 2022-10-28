@@ -3,6 +3,7 @@ import { Card } from "../components/Card";
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import { fetchRecommendations } from "../fetchers/recommendations";
+import { Plus } from "phosphor-react";
 
 export const Homepage = () => {
   const { data, isLoading, error } = useQuery(
@@ -20,7 +21,6 @@ export const Homepage = () => {
 
   return (
     <section className="homepage-container">
-      <Link to={"/recommend"}>recommend</Link>
       {data.recommends.map((item, index) => {
         return (
           <div key={index}>
@@ -34,6 +34,9 @@ export const Homepage = () => {
           </div>
         );
       })}
+      <Link to={"/recommend"}>
+        <Plus size={40} />
+      </Link>
     </section>
   );
 };
