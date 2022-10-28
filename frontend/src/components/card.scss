@@ -8,6 +8,7 @@
 
 .category {
   writing-mode: vertical-lr;
+  transform: scale(-1, -1);
   color: $category-text;
   font-size: 2.5rem;
   text-transform: uppercase;
@@ -17,7 +18,7 @@
 .card {
   display: flex;
   position: relative;
-  width: 40rem;
+  width: 50rem;
   background-color: $card-background;
   border-top-right-radius: $rounded;
   border-bottom-right-radius: $rounded;
@@ -36,6 +37,9 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 
     & > .data-title {
       color: $white;
@@ -46,7 +50,6 @@
 
     & > .description {
       color: $white;
-      padding: 0.5rem;
       font-size: 0.875rem;
       line-height: 1.5;
       letter-spacing: 1px;
