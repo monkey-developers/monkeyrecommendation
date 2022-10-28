@@ -1,0 +1,20 @@
+@import "../variables.scss";
+
+.navigate-button {
+  display: flex;
+  background-color: $main-1000;
+  color: $white;
+  padding: 1rem;
+  border-radius: $circle;
+  box-shadow: 2px 5px 5px $black;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 99;
+
+  &:hover {
+    background-color: $main-300;
+    box-shadow: 12px 12px 2px 1px $black;
+    transition: $transition;
+  }
+}

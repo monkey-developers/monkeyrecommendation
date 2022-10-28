@@ -1,8 +1,8 @@
 import "./homepage.scss";
 import { Card } from "../components/Card";
-import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import { fetchRecommendations } from "../fetchers/recommendations";
+import { ButtonNavigate } from "../components/ButtonNavigate";
 import { Plus } from "phosphor-react";
 
 export const Homepage = () => {
@@ -34,9 +34,9 @@ export const Homepage = () => {
           </div>
         );
       })}
-      <Link to={"/recommend"}>
+      <ButtonNavigate url={"/recommend"}>
         <Plus size={40} />
-      </Link>
+      </ButtonNavigate>
     </section>
   );
 };

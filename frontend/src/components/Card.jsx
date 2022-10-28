@@ -17,10 +17,7 @@ export const Card = ({
         <img src={img || undefined} />
         <div className="card-data">
           <h1 className="data-title">{masterpiece}</h1>
-          <div className="stars">
-            <Rating allowFraction={true} initialValue={rate} readonly={true} />
-            <span>{rate}/5</span>
-          </div>
+          <Rating allowFraction={true} initialValue={rate} readonly={true} />
           <p className="description">{description}</p>
         </div>
         <span className="card-author">{author}</span>

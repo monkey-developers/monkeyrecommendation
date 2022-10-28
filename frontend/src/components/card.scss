@@ -3,19 +3,12 @@
 .article {
   display: flex;
   align-items: center;
-  background-color: $custom-white;
-  border-radius: $rounded;
-  box-shadow: $container-shadow;
-
-  &:hover {
-    background: $hover-pink;
-    transition: $transition;
-  }
+  gap: 0.5rem;
 }
 
 .category {
   writing-mode: vertical-lr;
-  color: $main-1000;
+  color: $category-text;
   font-size: 2.5rem;
   text-transform: uppercase;
   font-weight: bold;
@@ -25,6 +18,14 @@
   display: flex;
   position: relative;
   width: 40rem;
+  background-color: $card-background;
+  border-top-right-radius: $rounded;
+  border-bottom-right-radius: $rounded;
+
+  &:hover {
+    background: $card-background-hover;
+    transition: $transition;
+  }
 
   & > img {
     user-select: none;
@@ -37,21 +38,14 @@
     padding-left: 0.85rem;
 
     & > .data-title {
-      color: $main-1000;
+      color: $white;
       text-transform: uppercase;
       font-weight: bold;
       font-size: 1.5em;
     }
 
-    & > .stars {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
-    & > p {
-      box-shadow: 0 0 2px black inset;
-      width: 80%;
+    & > .description {
+      color: $white;
       padding: 0.5rem;
       font-size: 0.875rem;
       line-height: 1.5;
@@ -60,9 +54,10 @@
   }
 
   .card-author {
+    color: white;
     position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
+    bottom: 0.8rem;
+    right: 1rem;
     text-transform: lowercase;
     opacity: 0.8;
     font-size: 0.85em;

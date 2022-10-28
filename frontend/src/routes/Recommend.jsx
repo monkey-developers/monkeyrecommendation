@@ -1,5 +1,4 @@
 import "./recommend.scss";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import { useMutation, useQueryClient } from "react-query";
@@ -7,7 +6,8 @@ import {
   postRecommendations,
   postImageRecommendations,
 } from "../fetchers/recommendations";
-import { ArrowLeft } from 'phosphor-react'
+import { ButtonNavigate } from "../components/ButtonNavigate";
+import { ArrowLeft } from "phosphor-react";
 
 export const Recommend = () => {
   const client = useQueryClient();
@@ -100,7 +100,9 @@ export const Recommend = () => {
         </select>
         <button type="submit">Create</button>
       </form>
-      <Link to={"/"}><ArrowLeft size={40} /></Link>
+      <ButtonNavigate url={"/"}>
+        <ArrowLeft size={40} />
+      </ButtonNavigate>
     </article>
   );
 };

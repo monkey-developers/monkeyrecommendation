@@ -1,6 +1,7 @@
 @import "../variables.scss";
 
 nav {
+  position: relative;
   background-color: transparent;
   width: 100%;
   display: flex;
@@ -8,6 +9,7 @@ nav {
   align-items: center;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+  z-index: 9999;
 
   .main-name {
     font-size: 3rem;
