@@ -1,0 +1,51 @@
+@import "../variables.scss";
+
+nav {
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  z-index: 9999;
+
+  .main-name {
+    font-size: 3rem;
+    font-weight: bold;
+    font-weight: 1000;
+
+    & > .main-link {
+      text-decoration: none;
+      color: $white;
+
+      &:hover {
+        opacity: 0.5;
+        transition: 200ms ease;
+      }
+
+      & > .project-name {
+        color: $main-1000;
+      }
+    }
+  }
+
+  .secondary-name {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    color: $white;
+    text-align: right;
+
+    .name-link {
+      text-decoration: none;
+      color: $main-1000;
+      cursor: pointer;
+
+      &:hover {
+        color: $hover-pink;
+        transition: 200ms ease;
+      }
+    }
+  }
+}

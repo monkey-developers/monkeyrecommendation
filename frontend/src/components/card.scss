@@ -1,0 +1,68 @@
+@import "../variables.scss";
+
+.article {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category {
+  writing-mode: vertical-lr;
+  transform: scale(-1, -1);
+  color: $category-text;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  width: 50rem;
+  background-color: $card-background;
+  border-top-right-radius: $rounded;
+  border-bottom-right-radius: $rounded;
+
+  &:hover {
+    background: $card-background-hover;
+    transition: $transition;
+  }
+
+  & > img {
+    user-select: none;
+  }
+
+  .card-data {
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    & > .data-title {
+      color: $white;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    & > .description {
+      color: $white;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      letter-spacing: 1px;
+    }
+  }
+
+  .card-author {
+    color: white;
+    position: absolute;
+    bottom: 0.8rem;
+    right: 1rem;
+    text-transform: lowercase;
+    opacity: 0.8;
+    font-size: 0.85em;
+  }
+}
