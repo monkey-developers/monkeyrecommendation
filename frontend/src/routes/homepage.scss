@@ -2,8 +2,35 @@
 
 .homepage-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  position: relative;
+  justify-content: center;
+
+  & > .recommends-list {
+    height: 79vh;
+    width: 56rem;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

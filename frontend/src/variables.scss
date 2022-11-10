@@ -4,6 +4,12 @@ $main-500: #dd46c4;
 $main-300: #ca64b7;
 $main-200: #f5b8ea;
 
+$main-with-opacity: rgba(199, 28, 170, 0.2);
+$main-with-opacity-hover: rgba(199, 28, 170, 0.3);
+
+$card-background: rgba(68, 13, 67, 0.5);
+$card-background-hover: rgba(68, 13, 67, 0.8);
+
 $rounded: 0.5rem;
 $circle: 3rem;
 
@@ -15,6 +21,4 @@ $hover-pink: rgb(248, 219, 243);
 $input-hover: rgb(122, 122, 122);
 $transition: 200ms;
 $container-shadow: 2px 2px 5px $black;
-$card-background: #440d43;
-$card-background-hover: #471c47;
 $category-text: #a32a85;

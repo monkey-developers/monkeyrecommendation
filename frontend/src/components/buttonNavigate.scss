@@ -2,7 +2,7 @@
 
 .navigate-button {
   display: flex;
-  background-color: $main-1000;
+  background-color: $main-with-opacity;
   color: $white;
   padding: 1rem;
   border-radius: $circle;
@@ -13,7 +13,7 @@
   z-index: 99;
 
   &:hover {
-    background-color: $main-300;
+    background-color: $main-with-opacity-hover;
     box-shadow: 12px 12px 2px 1px $black;
     transition: $transition;
   }

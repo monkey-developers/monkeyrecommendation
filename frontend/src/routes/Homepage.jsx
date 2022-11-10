@@ -21,19 +21,21 @@ export const Homepage = () => {
 
   return (
     <section className="homepage-container">
-      {data.recommends.map((item, index) => {
-        return (
-          <div key={index}>
-            <Card
-              masterpiece={item.masterpiece}
-              rate={item.rate}
-              description={item.description}
-              category={item.category}
-              author={item.author}
-            />
-          </div>
-        );
-      })}
+      <div className="recommends-list">
+        {data.recommends.map((item, index) => {
+          return (
+            <div key={index}>
+              <Card
+                masterpiece={item.masterpiece}
+                rate={item.rate}
+                description={item.description}
+                category={item.category}
+                author={item.author}
+              />
+            </div>
+          );
+        })}
+      </div>
       <ButtonNavigate url={"/recommend"}>
         <Plus size={40} />
       </ButtonNavigate>

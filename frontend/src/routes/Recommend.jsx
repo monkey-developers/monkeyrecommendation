@@ -78,13 +78,6 @@ export const Recommend = () => {
           onChange={(evt) => handleChange(evt)}
           required
         />
-        <input
-          name="photo"
-          type="file"
-          className="input-file"
-          onChange={(evt) => handlePhoto(evt)}
-          required
-        />
         <textarea
           name="description"
           type="text"
@@ -106,6 +99,13 @@ export const Recommend = () => {
           <option value="book">Book</option>
           <option value="movie">Movie</option>
         </select>
+        <input
+          name="photo"
+          type="file"
+          className="input-file"
+          onChange={(evt) => handlePhoto(evt)}
+          required
+        />
         <button type="submit">Create</button>
       </form>
       <ButtonNavigate url={"/"}>

@@ -10,6 +10,11 @@
 
 body {
   background-color: $background;
+  background-image: url("./assets/wp-1.png"), url("./assets/wp-2.png");
+  background-position: left bottom, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 750px auto;
+  height: 100vh;
 }
 
 ::selection {
