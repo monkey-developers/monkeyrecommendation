@@ -101,23 +101,18 @@
 
     & > button {
       background-color: transparent;
-      border: 1px solid black;
+      border: 2px solid black;
       border-radius: $rounded;
       padding: 0.5rem;
       text-transform: uppercase;
       font-weight: bold;
-      width: 50%;
+      width: 100%;
       cursor: pointer;
+      font-size: 1rem;
 
       &:hover {
         background-color: $black;
         color: $white;
-        transition: $transition;
-      }
-
-      &:focus {
-        outline: none;
-        border: 2px solid $black;
         transition: $transition;
       }
     }

@@ -1,11 +1,14 @@
-# Recommend shows for your friends!
+# 🥳 Recommend to your friends!
 
-An easy way to save your friends group recommendations, in one place!
+An easy way to save your friend's recommendations, all in one place!
 
-# TODOS
+# 📝 TODOS
 
 - [ ] PATCH method to add photo in backend
 - [x] Add file input in frontend recommend form
 - [ ] Delete button in frontend recommendation card
 - [x] The newer go first in list
-- [ ] Refactor form style
+- [x] Refactor form style
+- [x] Improve recommends list page
+- [ ] SQLite to Postgres
+- [ ] Handle image upload

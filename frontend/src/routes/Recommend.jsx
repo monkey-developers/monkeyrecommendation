@@ -106,7 +106,7 @@ export const Recommend = () => {
           onChange={(evt) => handlePhoto(evt)}
           required
         />
-        <button type="submit">Create</button>
+        <button type="submit">RECOMMEND</button>
       </form>
       <ButtonNavigate url={"/"}>
         <ArrowLeft size={40} />
