@@ -2,7 +2,7 @@
 
 An easy way to save your friend's recommendations, all in one place!
 
-# 📝 TODOS
+# 📝 ToDo
 
 - [ ] PATCH method to add photo in backend
 - [x] Add file input in frontend recommend form
