@@ -1,3 +1,3 @@
 export const Homepage = () => {
-  return <div>oi</div>;
+  return <div className="bg-main-theme text-white">oi</div>;
 };
