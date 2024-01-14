@@ -1,3 +1,9 @@
+import { Card } from "../components";
+
 export const Homepage = () => {
-  return <div>oi</div>;
+  return (
+    <div>
+      <Card />
+    </div>
+  );
 };
