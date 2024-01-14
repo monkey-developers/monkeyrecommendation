@@ -1,5 +1,9 @@
 export const Recommend = () => {
     return(
-        <div>recommend</div>
+        <div className="h-full w-full">
+            <form>
+                oi
+            </form>
+        </div>
     )
 }
