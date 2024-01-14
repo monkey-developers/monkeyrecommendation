@@ -8,8 +8,8 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    <Navbar />
     <MainLayout>
-      <Navbar />
       <RouterProvider router={router} />
     </MainLayout>
   </React.StrictMode>

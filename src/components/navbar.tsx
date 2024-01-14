@@ -1,6 +1,6 @@
 export const Navbar = () => {
   return (
-    <nav className="flex justify-between p-2 items-center">
+    <nav className="flex justify-between items-center bg-main-theme text-white sm:px-20 py-2 px-2 w-screen">
       <div>
         <img src="mkdevs-logo.svg" className="h-7" />
       </div>
