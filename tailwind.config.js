@@ -2,7 +2,13 @@
 export default {
   content: ['./app/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "main-theme": "#17191A",
+        "main-color": "#A32A85",
+        "main-color-transparent": "rgba(163, 42, 133, .1)",
+      },
+    },
   },
   plugins: [],
 }

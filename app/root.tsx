@@ -8,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { Navbar } from "./components";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -22,7 +23,11 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body
+        className="bg-main-theme h-[calc(100vh-64px)] w-screen bg-cover text-white overflow-y-scroll sm:px-20 pl-[2px]"
+        style={{ backgroundImage: `url(background.svg)` }}
+      >
+        <Navbar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
