@@ -11,7 +11,7 @@ export const Navbar = () => {
         <span className="text-sm text-end">
           Developed by{" "}
           <span className="text-main-color">
-            {"<"}iguoliveira {"/>"}
+            {"<"}MKDevs Group {"/>"}
           </span>
         </span>
       </div>
