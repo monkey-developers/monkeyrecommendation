@@ -12,9 +12,6 @@ const db = new sqlite3.Database(DBSRC, (err) => {
         db.run(`CREATE TABLE anime (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, review NUMBER, description TEXT, author TEXT)`, (err) => {
             if(err){
                 console.log("table already exists")
-            }else{
-                const insert = "INSERT INTO anime (name,review,description,author) VALUES (?,?,?,?)"
-                db.run(insert, ["teste", 3, "teste", "teste"])
             }
         })
     }
