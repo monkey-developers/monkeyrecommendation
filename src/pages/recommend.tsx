@@ -8,7 +8,6 @@ import "react-toastify/dist/ReactToastify.css"
 
 export const Recommend = () => {
   const [animeData, setAnimeData] = useState();
-
   const [err, setErr] = useState("")
   const [inputs, setInputs] = useState({
     author: ""
@@ -38,6 +37,7 @@ export const Recommend = () => {
 
   const handleChange = (e: any) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
+    console.log(animeData)
   };
 
   function recommendAnime(){
@@ -57,6 +57,7 @@ export const Recommend = () => {
 
   return (
     <div className="h-full w-full">
+      <button className="bg-main-color p-2 rounded absolute right-2" onClick={() => navigate({to: "/"})}>Voltar</button>
       <div className="flex flex-col gap-2 w-1/2">
         <SearchAnimeField setAnimeData={setAnimeData} />
         {animeData && (
@@ -78,6 +79,12 @@ export const Recommend = () => {
         </div>
         <button className="bg-main-color active:bg-transparent active:border-2 active:border-main-color" onClick={recommendAnime}>Recommend</button>
       </div>
+      {animeData && animeData.youtubeVideoId != null &&
+        <iframe className='video'
+        title='Youtube player'
+        sandbox='allow-same-origin allow-forms allow-popups allow-scripts allow-presentation'
+        src={`https://youtube.com/embed/${animeData.youtubeVideoId}?autoplay=0`}>
+        </iframe>}
       <ToastContainer
         position="top-right"
         autoClose={1500}

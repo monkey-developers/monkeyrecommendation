@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.get("/", (req, res, next) => {
-    res.json({"msg": "ok"})
+    res.json({"msg": "Server Working!"})
 })
 
 app.get("/api/animes", (req, res, next) => {
