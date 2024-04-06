@@ -1,38 +1,43 @@
 import { clsx } from "clsx";
 
 type Props = {
+  id: number
   image: string;
   title: string;
   episodes: number;
   status: string;
-  description?: string;
-  author?: string;
+  description: string;
+  author: string;
+  deleteFunc: any
 };
 
 export const Card = ({
+  id,
   image,
   description,
   episodes,
   status,
   title,
   author,
+  deleteFunc,
 }: Props) => {
+  
+  function deleteAnime(){
+    deleteFunc(id)
+  }
   return (
     <div className="bg-main-color-transparent flex h-full w-full">
       <img src={image} className="h-full" />
       <div className="p-2 relative w-full">
-        <div className="flex absolute left-2 bottom-2 gap-2">
-          <button>
-            <img src="del-icon.svg" className="h-5" />
-          </button>
-          <button>
-            <img src="edit-icon.svg" className="h-5" />
+        <div className="flex absolute top-2 right-2 gap-2">
+          <button onClick={deleteAnime}>
+            <img src="del-icon.svg" className="h-6" />
           </button>
         </div>
         <span className="font-bold uppercase">{title}</span>
         <div className="flex gap-5">
           <div>
-            <span>{episodes}eps</span>
+            <span>{episodes} episodes</span>
           </div>
           <div>
             <span
@@ -45,9 +50,9 @@ export const Card = ({
             </span>
           </div>
         </div>
-        {description && <p className="text-sm p-2">{description}</p>}
+        {description && <p className="text-xs py-2">{description}</p>}
         {author && (
-          <div className="text-sm absolute bottom-2 right-2 opacity-50 lowercase">
+          <div className="text-base s absolute bottom-2 right-2 opacity-50 lowercase">
             {author}
           </div>
         )}

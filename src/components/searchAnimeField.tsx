@@ -29,7 +29,7 @@ export const SearchAnimeField = ({ setAnimeData }: Props) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative flex flex-col">
       <label>Search Anime</label>
       <input
         className="text-black"
@@ -39,12 +39,13 @@ export const SearchAnimeField = ({ setAnimeData }: Props) => {
         onChange={handleChange}
         value={animeName}
       />
-      <div className="bg-white text-black z-50 absolute">
+      <div className="bg-white text-black flex flex-col text-start border-t border-black">
         {animeName != "" &&
           animes.map((item: any, index: number) => (
             <button
               key={index}
               onClick={() => handlePickAnime(item.attributes)}
+              className="text-start hover:bg-main-color hover:text-white"
             >
               {item.attributes.titles.en_jp}
             </button>

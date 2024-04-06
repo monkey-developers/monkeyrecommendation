@@ -9,7 +9,7 @@ const db = new sqlite3.Database(DBSRC, (err) => {
         throw err
     }else{
         console.log("SQLITE DB CONNECTED")
-        db.run(`CREATE TABLE anime (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, review NUMBER, description TEXT, author TEXT)`, (err) => {
+        db.run(`CREATE TABLE anime (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, image TEXT, episodes NUMBER, status TEXT, description TEXT, author TEXT)`, (err) => {
             if(err){
                 console.log("table already exists")
             }

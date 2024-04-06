@@ -2,18 +2,20 @@ const express = require("express")
 const app = express()
 const db = require("./database.js")
 const bodyParser = require("body-parser")
+const cors = require("cors")
 
 const PORT = 3000
 
 app.use(bodyParser.urlencoded({ extended: false}))
 app.use(bodyParser.json())
+app.use(cors())
 
 app.get("/", (req, res, next) => {
     res.json({"msg": "ok"})
 })
 
 app.get("/api/animes", (req, res, next) => {
-    const sql = "select * from anime"
+    const sql = "select * from anime order by id desc"
     db.all(sql, [], (err,rows) => {
         if(err){
             res.status(400).json({"error":err.message})
@@ -27,28 +29,16 @@ app.get("/api/animes", (req, res, next) => {
 })
 
 app.post("/api/animes/", (req, res, next) => {
-    var errs = []
-    if(!req.body.name){
-        errs.push('No title specified')
-    }
-    if(!req.body.review){
-        errs.push('No review specified')
-    }
-    if(!req.body.description){
-        errs.push('No description specified')
-    }
-    if(!req.body.author){
-        errs.push('No author specified')
-    }
-
     const data = {
         name: req.body.name,
-        review: req.body.review,
+        image: req.body.image, 
+        episodes: req.body.episodes,
+        status: req.body.status,
         description: req.body.description,
         author: req.body.author
     }
-    const sql = "INSERT INTO anime (name, review, description, author) VALUES (?,?,?,?)"
-    const params = [data.name, data.review, data.description, data.author]
+    const sql = "INSERT INTO anime (name, image, episodes, status, description, author) VALUES (?,?,?,?,?,?)"
+    const params = [data.name, data.image, data.episodes, data.status, data.description, data.author]
     db.run(sql, params, (err, response) => {
         if(err){
             res.status(400).json({"error": err.message})
@@ -59,6 +49,20 @@ app.post("/api/animes/", (req, res, next) => {
             "data": data
         })
     })
+})
+
+app.delete("/api/anime/:id", (req, res, next) => {
+    db.run(
+        "DELETE FROM anime WHERE id = ?",
+        req.params.id,
+        function(err, result){
+            if(err){
+                res.status(400).json({"error": res.message})
+                return
+            }
+            res.json({"message":"deleted", changes: this.changes})
+        }
+    )
 })
 
 app.listen(PORT, () => {
