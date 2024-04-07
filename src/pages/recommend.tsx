@@ -5,6 +5,7 @@ import { useNavigate } from "@tanstack/react-router";
 import clsx from "clsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 type AnimeDataType = {
   titles: { en_jp: string };
   posterImage: { small: string };
@@ -13,6 +14,7 @@ type AnimeDataType = {
   description: string;
   youtubeVideoId: string;
 };
+
 export const Recommend = () => {
   const [animeData, setAnimeData] = useState<AnimeDataType>();
   const [err, setErr] = useState("");
@@ -141,14 +143,6 @@ export const Recommend = () => {
           Recommend
         </button>
       </div>
-      {animeData && animeData.youtubeVideoId != null && (
-        <iframe
-          className="video"
-          title="Youtube player"
-          sandbox="allow-same-origin allow-forms allow-popups allow-scripts allow-presentation"
-          src={`https://youtube.com/embed/${animeData.youtubeVideoId}?autoplay=0`}
-        ></iframe>
-      )}
       <ToastContainer
         position="top-right"
         autoClose={1500}

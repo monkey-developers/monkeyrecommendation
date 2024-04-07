@@ -1,5 +1,7 @@
 import { clsx } from "clsx";
 import { useState } from "react";
+import { Popup } from "./popup"
+import { TrailerPopup } from "./trailerPopup"
 
 type Props = {
   id: number;
@@ -31,12 +33,22 @@ export const Card = ({
   function deleteAnime() {
     deleteFunc(id);
   }
-  const [showFullText, setShowFullText] = useState(false);
+  const [synopsis, setSynopsis] = useState(false)
+  const [trailer, setTrailer] = useState(false)
 
-  const toggleText = () => {
-    setShowFullText(!showFullText);
-  };
+  const handlePopup = () => {
+    setSynopsis(!synopsis)
+    console.log(videoId)
+  }
+
+  const handleTrailerPopup = () => {
+    setTrailer(!trailer)
+  }
+
   return (
+    <>
+    {synopsis && <Popup text={description} closePopup={handlePopup} />}
+    {trailer && <TrailerPopup videoId={videoId} closePopup={handleTrailerPopup} />}
     <div
       className="border bg-card text-card-foreground max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg"
       data-v0-t="card"
@@ -52,10 +64,10 @@ export const Card = ({
           />
         </div>
         <div className="w-1/2 p-6 space-y-4">
-          <h1 className="text-2xl font-bold">Attack on Titan</h1>
+          <h1 className="text-2xl font-bold">{title}</h1>
           <div className="flex justify-between text-sm">
-            <span>25 episodes</span>
-            <span className="font-semibold">Finished</span>
+            <span>{episodes} episodes</span>
+            <span className="font-semibold">{status}</span>
           </div>
           <div className="flex justify-between">
             <span className="font-semibold">Score</span>
@@ -66,24 +78,12 @@ export const Card = ({
           <h2 className="text-xl font-semibold">Synopsis</h2>
           <div className="mt-4">
             <div
-              className={
-                showFullText
-                  ? "text-sm line-clamp-2 leading-relaxed text-overflow"
-                  : "text-sm  leading-relaxed"
-              }
-            >
+              className="text-sm line-clamp-2 leading-relaxed text-overflow">
               {description}
             </div>
-            {showFullText && (
-              <button className="" onClick={toggleText}>
+              <button onClick={handlePopup}>
                 Read More
               </button>
-            )}
-            {!showFullText && (
-              <button className="" onClick={toggleText}>
-                Show Less
-              </button>
-            )}
           </div>
           <div className="flex flex-col space-y-2">
             <div className="flex justify-between">
@@ -93,17 +93,14 @@ export const Card = ({
           </div>
 
           <div className="flex justify-between items-center">
-            <div className="bg-green-500 dark:bg-gray-900 p-4 w-36">
-              <div className="flex justify-between items-center">
-                <button className="text-gray-500 dark:text-gray-400">
-                  Play Trailer
+                <button onClick={handleTrailerPopup} disabled={videoId == null} className={clsx({"text-xs": !videoId}, "text-gray-500 dark:text-gray-400 bg-green-500 dark:bg-gray-900 p-4 w-36 text-center")}>
+                  {videoId ? "Play Trailer" : "Trailer Unavailable"}
                 </button>
-              </div>
-            </div>
-            <span>{author}</span>
+                <span>{author}</span>
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 };
