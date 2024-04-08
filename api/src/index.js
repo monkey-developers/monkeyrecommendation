@@ -130,10 +130,8 @@ app.post("/api/user/login", (req, res, next) => {
     username: req.body.username,
     password: hashedPass
   }
-  console.log(data.password)
-  console.log(data.username)
   
-  db.all("SELECT * FROM user WHERE username = ?", data.username, (err, rows) => {
+  db.all("SELECT * FROM user WHERE username = ? AND password = ?", [data.username, data.password], (err, rows) => {
     if(err){
       res.status(400).json({
         error: err.message,
@@ -141,7 +139,7 @@ app.post("/api/user/login", (req, res, next) => {
         data: false
       })
     }
-    if(rows){
+    if(rows && rows.length > 0){
       res.json({
         message: "LOGGED IN",
         data: rows

@@ -29,7 +29,7 @@ export const Login = () => {
       });
 
     const notifyErr = () =>
-      toast.error("Error on sign up =(", {
+      toast.error("User do not exists", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -46,6 +46,16 @@ export const Login = () => {
       }
     },[])
 
+    function isUserExists(userData: any){
+      if(userData){
+        if(userData.message == "LOGGED IN"){
+          return true
+        }
+      }
+
+      return false
+    }
+
     function handleLoginUser(){
         const data = {
             username: inputs.username,
@@ -54,10 +64,11 @@ export const Login = () => {
         axios
         .post(`${import.meta.env.VITE_API}/api/user/login`, data)
         .then((res) => {
-          if (res) {
+          if(isUserExists(res.data)){
             loginUser(res.data.data)
-            console.log(user)
             notify();
+          }else{
+            notifyErr();
           }
         })
         .catch(() => {
@@ -71,6 +82,7 @@ export const Login = () => {
 
     return(
         <div className="h-[calc(100vh-64px)] w-full flex flex-col items-center justify-center gap-2">
+            <Link to="/" className="hover:text-main-color">Return to home</Link>
             <div className="bg-gray-900 h-fit w-fit p-5 flex flex-col items-center gap-4 rounded-xl">
                 <div className="flex flex-col">
                     <label>Username</label>
@@ -88,11 +100,12 @@ export const Login = () => {
                         onChange={handleChange}
                         name="password"
                         value={inputs.password}
+                        type='password'
                     />
                 </div>
-                <button className="bg-main-color py-1 px-4 rounded" onClick={handleLoginUser}>Sign Up</button>
+                <button className="bg-main-color py-1 px-4 rounded" onClick={handleLoginUser}>Login</button>
             </div>
-            <Link to="/" className="hover:text-main-color">Return to home</Link>
+            <Link to="/register" className="hover:text-main-color">Join us now!</Link>
             <ToastContainer />
         </div>
     )

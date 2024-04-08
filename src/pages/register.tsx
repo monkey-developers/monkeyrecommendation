@@ -73,6 +73,7 @@ export const Register = () => {
 
     return(
         <div className="h-[calc(100vh-64px)] w-full flex flex-col items-center justify-center gap-2">
+            <Link to="/" className="hover:text-main-color">Return to home</Link>
             <div className="bg-gray-900 h-fit w-fit p-5 flex flex-col items-center gap-4 rounded-xl">
                 <div className="flex flex-col">
                     <label>Name</label>
@@ -99,6 +100,7 @@ export const Register = () => {
                         onChange={handleChange}
                         name="password"
                         value={inputs.password}
+                        type='password'
                     />
                 </div>
                 <div className="flex flex-col">
@@ -112,7 +114,7 @@ export const Register = () => {
                 </div>
                 <button className="bg-main-color py-1 px-4 rounded" onClick={registerUser}>Sign Up</button>
             </div>
-            <Link to="/" className="hover:text-main-color">Return to home</Link>
+            <Link to="/login" className="hover:text-main-color">Login now!</Link>
             <ToastContainer />
         </div>
     )

@@ -1,23 +1,25 @@
-import { useEffect, useState } from "react";
-import { Card, FloatButton } from "../components";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
+import 'react-toastify/dist/ReactToastify.css';
+
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+
+import { Card, FloatButton } from '../components';
 
 export const Homepage = () => {
   const [animes, getAnimes] = useState<
     [
       {
-        id: number;
-        name: string;
-        image: string;
-        episodes: number;
-        status: string;
-        description: string;
-        author: string;
-        score: number;
-        comment: string;
-        videoId: string;
+        id: number,
+        name: string,
+        image: string,
+        episodes: number,
+        status: string,
+        description: string,
+        author: string,
+        score: number,
+        comment: string,
+        videoId: string,
       }
     ]
   >([
@@ -34,6 +36,7 @@ export const Homepage = () => {
       videoId: "",
     },
   ]);
+  
   const notify = () =>
     toast.success("Deleted!", {
       position: "top-right",

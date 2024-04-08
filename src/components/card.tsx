@@ -1,7 +1,8 @@
-import { clsx } from "clsx";
-import { useState } from "react";
-import { Popup } from "./popup"
-import { TrailerPopup } from "./trailerPopup"
+import { clsx } from 'clsx';
+import { useState } from 'react';
+
+import { Popup } from './popup';
+import { TrailerPopup } from './trailerPopup';
 
 type Props = {
   id: number;
@@ -30,9 +31,11 @@ export const Card = ({
   videoId,
   deleteFunc,
 }: Props) => {
+
   function deleteAnime() {
     deleteFunc(id);
   }
+  
   const [synopsis, setSynopsis] = useState(false)
   const [trailer, setTrailer] = useState(false)
 
@@ -50,9 +53,12 @@ export const Card = ({
     {synopsis && <Popup text={description} closePopup={handlePopup} />}
     {trailer && <TrailerPopup videoId={videoId} closePopup={handleTrailerPopup} />}
     <div
-      className="border bg-card text-card-foreground max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg"
+      className="border bg-card text-card-foreground max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg relative"
       data-v0-t="card"
     >
+      <button className='absolute right-2 top-2' onClick={deleteAnime}>
+        <img src='del-icon.svg' className='h-8' />
+      </button>
       <div className="flex">
         <div className="w-1/2">
           <img

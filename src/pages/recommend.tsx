@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SearchAnimeField } from "../components";
 import axios from "axios";
 import { useNavigate } from "@tanstack/react-router";
 import clsx from "clsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { getUser } from "../storage/localStorage"
 
 type AnimeDataType = {
   titles: { en_jp: string };
@@ -19,12 +20,19 @@ export const Recommend = () => {
   const [animeData, setAnimeData] = useState<AnimeDataType>();
   const [err, setErr] = useState("");
   const [inputs, setInputs] = useState({
-    author: "",
     score: 0,
     comment: "",
   });
 
   const navigate = useNavigate();
+  const user = getUser()
+
+  useEffect(() => {
+    if(!user){
+      navigate({ to: "/login" })
+    }
+  })
+
   const notify = () =>
     toast.success("Recommended! Redirecting now...", {
       position: "top-right",
@@ -37,6 +45,7 @@ export const Recommend = () => {
       theme: "colored",
       onClose: () => navigate({ to: "/" }),
     });
+
   const notifyErr = () =>
     toast.error("Error on recommendation =(", {
       position: "top-right",
@@ -51,11 +60,10 @@ export const Recommend = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
-    console.log(animeData);
   };
 
   function recommendAnime() {
-    if (animeData && inputs.author) {
+    if (animeData && user) {
       setErr("");
       const data = {
         name: animeData.titles.en_jp,
@@ -63,7 +71,7 @@ export const Recommend = () => {
         episodes: animeData.episodeCount,
         status: animeData.status,
         description: animeData.description,
-        author: inputs.author,
+        author: user.username,
         score: inputs.score,
         comment: inputs.comment,
         videoId: animeData.youtubeVideoId,
@@ -99,18 +107,6 @@ export const Recommend = () => {
             </span>
           </div>
         )}
-        <div className="flex flex-col">
-          <label>Author</label>
-          <input
-            onChange={handleChange}
-            name="author"
-            value={inputs.author}
-            className={clsx(
-              { "border-2 border-red-500": err != "" && inputs.author == "" },
-              "text-black"
-            )}
-          />
-        </div>
         <div className="flex flex-col">
           <label>score</label>
           <input
