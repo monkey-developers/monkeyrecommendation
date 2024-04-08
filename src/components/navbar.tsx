@@ -1,8 +1,22 @@
+import { getUser, logoutUser } from "../storage/localStorage";
+
 export const Navbar = () => {
+  const user = getUser()
+
   return (
     <nav className="flex justify-between items-center bg-main-theme text-white sm:px-20 py-2 px-2 w-screen">
       <div>
         <img src="mkdevs-logo.svg" className="h-7" />
+      </div>
+      <div>
+        {user
+        ?
+        <div className="flex items-center gap-5">
+          <span>Welcome {user.name}</span>
+          <button className="bg-main-color p-2 rounded" onClick={logoutUser}>Logout</button>
+        </div>
+        :
+        <button className="bg-main-color p-2 rounded">Sign up</button>}
       </div>
       <div className="flex flex-col">
         <span className="text-xl">

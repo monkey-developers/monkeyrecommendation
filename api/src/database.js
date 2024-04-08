@@ -1,5 +1,4 @@
 const sqlite3 = require("sqlite3");
-const md5 = require("md5");
 
 const DBSRC = "db.sqlite";
 
@@ -13,10 +12,18 @@ const db = new sqlite3.Database(DBSRC, (err) => {
       `CREATE TABLE anime (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, image TEXT, episodes NUMBER, status TEXT, description TEXT, author TEXT, score NUMBER, comment TEXT, videoId TEXT)`,
       (err) => {
         if (err) {
-          console.log("table already exists");
+          console.log("Table ANIME already exists");
         }
       }
     );
+    db.run(
+      `CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT, password TEXT, name TEXT, username TEXT)`,
+      (err) => {
+        if(err){
+          console.log("Table USER already exists")
+        }
+      }
+    )
   }
 });
 
