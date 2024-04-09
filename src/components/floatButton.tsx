@@ -4,7 +4,7 @@ export const FloatButton = () => {
   return (
     <Link
       to="/recommend"
-      className="bg-[rgba(0,0,0,.25)] fixed bottom-2 right-2 rounded-3xl h-7 w-7"
+      className="bg-blue-500 fixed bottom-6 right-6 rounded-3xl h-12 w-12 flex"
     >
       <img src="float-button-icon.svg" />
     </Link>

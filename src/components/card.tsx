@@ -42,6 +42,7 @@ export const Card = ({
   const handlePopup = () => {
     setSynopsis(!synopsis);
     console.log(videoId);
+    console.log("fodase");
   };
 
   const handleTrailerPopup = () => {
@@ -50,7 +51,9 @@ export const Card = ({
 
   return (
     <>
-      {synopsis && <Popup text={description} closePopup={handlePopup} />}
+      {synopsis && (
+        <Popup text={description} closePopup={handlePopup} title={title} />
+      )}
       {trailer && (
         <TrailerPopup videoId={videoId} closePopup={handleTrailerPopup} />
       )}
@@ -78,17 +81,21 @@ export const Card = ({
                 </div>
               </div>
             </div>
-            <div className="py-10">
+            <div className="py-10 flex flex-col">
               <h3 className="font-bold text-lg">Synopsis</h3>
               <p className="text-gray-400 text-sm line-clamp-2 leading-relaxed text-overflow">
                 {description}
               </p>
               <button
                 className="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-blue-400 text-xs mt-1"
+                data-modal-target="default-modal"
+                data-modal-toggle="default-modal"
                 onClick={handlePopup}
               >
                 Read More
               </button>
+              <span className="font-bold text-lg">Comment</span>
+              <span>{comment}</span>
             </div>
 
             <div className="flex justify-between items-center">
