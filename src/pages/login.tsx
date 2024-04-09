@@ -82,7 +82,7 @@ export const Login = () => {
 
   return (
     <div className="h-[calc(100vh-64px)] w-full flex flex-col items-center justify-center gap-2">
-      <Link to="/" className="hover:text-main-color">
+      <Link to="/" className="hover:text-blue-500">
         Return to home
       </Link>
       <div className="bg-gray-900 h-fit w-fit p-5 flex flex-col items-center gap-4 rounded-xl">
@@ -106,13 +106,13 @@ export const Login = () => {
           />
         </div>
         <button
-          className="bg-main-color py-1 px-4 rounded"
+          className="bg-blue-500 py-1 px-4 rounded"
           onClick={handleLoginUser}
         >
           Login
         </button>
       </div>
-      <Link to="/register" className="hover:text-main-color">
+      <Link to="/register" className="hover:text-blue-500">
         Join us now!
       </Link>
       <ToastContainer />

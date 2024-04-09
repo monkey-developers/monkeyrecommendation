@@ -17,10 +17,7 @@ export const Navbar = () => {
         {user && (
           <div className="flex items-center gap-5">
             <span>Welcome, {user.name}</span>
-            <button
-              className="bg-main-color p-2 rounded"
-              onClick={handleLogout}
-            >
+            <button className="bg-blue-500 p-2 rounded" onClick={handleLogout}>
               Logout
             </button>
           </div>
@@ -28,11 +25,11 @@ export const Navbar = () => {
       </div>
       <div className="flex flex-col">
         <span className="text-xl">
-          Monkey<span className="text-main-color">recommendation</span>
+          Monkey<span className="text-blue-500">recommendation</span>
         </span>
         <span className="text-sm text-end">
           Developed by{" "}
-          <span className="text-main-color">
+          <span className="text-blue-500">
             {"<"}MKDevs Group {"/>"}
           </span>
         </span>
