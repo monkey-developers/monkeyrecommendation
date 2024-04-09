@@ -29,15 +29,17 @@ export const SearchAnimeField = ({ setAnimeData }: Props) => {
   };
 
   return (
-    <div className="relative flex flex-col">
+    <div className="flex flex-col justify-center items-center">
       <label>Search Anime</label>
+
       <input
-        className="text-black"
         id="anime-name"
         name="anime-name"
         type="text"
         onChange={handleChange}
         value={animeName}
+        className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full text-black"
+        placeholder="Anime name..."
       />
       <div className="bg-white text-black flex flex-col text-start border-t border-black">
         {animeName != "" &&

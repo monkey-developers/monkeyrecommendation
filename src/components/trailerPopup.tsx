@@ -1,3 +1,5 @@
+import { X } from "@phosphor-icons/react";
+
 type Props = {
   videoId: string;
   closePopup: any;
@@ -9,12 +11,7 @@ export const TrailerPopup = ({ videoId, closePopup }: Props) => {
       <div className="bg-gray-900 h-fit w-1/2 p-5 rounded-xl">
         <div className="flex justify-between pb-2 border-gray-600 border-b">
           <div className="text-xl font-bold">Trailer</div>
-          <button
-            onClick={closePopup}
-            className="bg-main-color p-1 rounded active:bg-transparent active:border-2 active:border-main-color"
-          >
-            Close
-          </button>
+          <X size={24} onClick={closePopup} cursor={"pointer"} />
         </div>
         <div className="flex justify-center">
           <iframe

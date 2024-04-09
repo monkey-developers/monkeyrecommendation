@@ -1,11 +1,11 @@
 import { getUser, logoutUser } from "../storage/localStorage";
 
 export const Navbar = () => {
-  const user = getUser()
+  const user = getUser();
 
-  function handleLogout(){
-    logoutUser()
-    window.location.reload()
+  function handleLogout() {
+    logoutUser();
+    window.location.reload();
   }
 
   return (
@@ -14,11 +14,17 @@ export const Navbar = () => {
         <img src="mkdevs-logo.svg" className="h-7" />
       </div>
       <div>
-        {user &&
-        <div className="flex items-center gap-5">
-          <span>Welcome {user.name}</span>
-          <button className="bg-main-color p-2 rounded" onClick={handleLogout}>Logout</button>
-        </div>}
+        {user && (
+          <div className="flex items-center gap-5">
+            <span>Welcome, {user.name}</span>
+            <button
+              className="bg-main-color p-2 rounded"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </div>
+        )}
       </div>
       <div className="flex flex-col">
         <span className="text-xl">

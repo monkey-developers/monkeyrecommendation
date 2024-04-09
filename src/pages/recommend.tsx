@@ -5,7 +5,7 @@ import { useNavigate } from "@tanstack/react-router";
 import clsx from "clsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { getUser } from "../storage/localStorage"
+import { getUser } from "../storage/localStorage";
 
 type AnimeDataType = {
   titles: { en_jp: string };
@@ -25,13 +25,13 @@ export const Recommend = () => {
   });
 
   const navigate = useNavigate();
-  const user = getUser()
+  const user = getUser();
 
   useEffect(() => {
-    if(!user){
-      navigate({ to: "/login" })
+    if (!user) {
+      navigate({ to: "/login" });
     }
-  })
+  });
 
   const notify = () =>
     toast.success("Recommended! Redirecting now...", {
@@ -90,14 +90,14 @@ export const Recommend = () => {
   }
 
   return (
-    <div className="h-full w-full">
+    <div className="flex h-[calc(100vh-64px)] justify-center items-center">
       <button
         className="bg-main-color p-2 rounded absolute right-2"
         onClick={() => navigate({ to: "/" })}
       >
         Voltar
       </button>
-      <div className="flex flex-col gap-2 w-1/2">
+      <div className="flex flex-col gap-2">
         <SearchAnimeField setAnimeData={setAnimeData} />
         {animeData && (
           <div>
@@ -109,15 +109,15 @@ export const Recommend = () => {
         )}
         <div className="flex flex-col">
           <label>score</label>
+
           <input
             onChange={handleChange}
             name="score"
             maxLength={2}
             value={inputs.score < 0 ? 0 : inputs.score > 10 ? 10 : inputs.score}
-            className={clsx(
-              { "border-2 border-red-500": err != "" && inputs.score == 0 },
-              "text-black"
-            )}
+            className="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full text-black"
+            type="text"
+            placeholder="Score..."
           />
         </div>
         <div className="flex flex-col">
@@ -128,12 +128,14 @@ export const Recommend = () => {
             value={inputs.comment}
             className={clsx(
               { "border-2 border-red-500": err != "" && inputs.comment == "" },
-              "text-black"
+              "flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full text-black"
             )}
+            type="text"
+            placeholder="Comment"
           />
         </div>
         <button
-          className="bg-main-color active:bg-transparent active:border-2 active:border-main-color"
+          className="inline-flex bg-main-color items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full mb-4"
           onClick={recommendAnime}
         >
           Recommend
