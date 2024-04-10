@@ -6,7 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 
 import { Card, FloatButton } from "../components";
 
-export const Homepage = () => {
+export const HomePage = () => {
   const [animes, getAnimes] = useState<
     [
       {
@@ -65,36 +65,52 @@ export const Homepage = () => {
   }
 
   return (
-    <div className="h-full min-h-[calc(100vh-64px)] w-full flex flex-col gap-2 relative">
-      {animes.map((item, index) => (
-        <Card
-          key={index}
-          id={item.id}
-          image={item.image}
-          episodes={item.episodes}
-          status={item.status}
-          title={item.name}
-          description={item.description}
-          author={item.author}
-          score={item.score}
-          comment={item.comment}
-          videoId={item.videoId}
-          deleteFunc={deleteRecommendation}
-        />
-      ))}
-      <FloatButton />
-      <ToastContainer
-        position="top-right"
-        autoClose={1500}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable={false}
-        pauseOnHover={false}
-        theme="colored"
-      />
-    </div>
+    <>
+        <div className="h-full w-full flex flex-col">
+            <div className="flex flex-col justify-center h-screen">
+                <span className="text-6xl font-bold">Welcome to our anime review site! Let's explore the fascinating world of anime together.</span>
+                <span className="text-3xl text-gray-500">The true anime experience.</span>
+            </div>
+            <FloatButton />
+        </div>
+
+        <div className="p-24">
+        <div className="w-full flex items-center flex-col p-12 rounded-lg">
+                <div className="flex items-center justify-center">
+                    <div className="flex flex-col j">
+                        <span className="text-4xl font-bold text-blue-500">The next generation anime plataform.</span>
+                        <span className="text-2xl text-gray-500">Track, share and discover your favorite anime with Monkeyrecommendation</span>
+                    </div>
+                </div>
+            
+                <div className="flex p-3 mt-[10%]">
+                    <div className="p-4 flex basis-6/12	">
+                        <div className="flex flex-col gap-8">
+                            <div className="flex flex-col">
+                                <span className="text-2xl font-bold text-blue-500">Discover your obsessions</span>
+                                <span className="text-xl text-gray-500">What are your highest rated genres follow your reviews.</span>
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-2xl font-bold text-blue-500">Bring monkeyrecommendation anywhere</span>
+                                <span className="text-xl text-gray-500">Keep track of your reviews in your android or iphone.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="p-4 flex basis-6/12">
+                        <div className="flex flex-col gap-8">
+                            <div className="flex flex-col">
+                                <span className="text-2xl font-bold text-blue-500">Join the conversation</span>
+                                <span className="text-xl text-gray-500">See other reviews and discover new anime to watch.</span>
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-2xl font-bold text-blue-500">Tweak to your liking</span>
+                                <span className="text-xl text-gray-500">Customize your scoring system, title format and much more!</span>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                </div>
+        </div>
+    </>
   );
 };

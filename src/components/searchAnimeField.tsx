@@ -47,7 +47,7 @@ export const SearchAnimeField = ({ setAnimeData }: Props) => {
             <button
               key={index}
               onClick={() => handlePickAnime(item.attributes)}
-              className="text-start hover:bg-main-color hover:text-white"
+              className="text-start hover:bg-blue-500 hover:text-white"
             >
               {item.attributes.titles.en_jp}
             </button>

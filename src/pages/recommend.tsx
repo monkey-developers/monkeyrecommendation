@@ -97,7 +97,7 @@ export const Recommend = () => {
         {animeData && (
           <div>
             Recommendation:{" "}
-            <span className="text-main-color uppercase font-bold">
+            <span className="text-blue-500 uppercase font-bold">
               {animeData.titles.en_jp}
             </span>
           </div>
