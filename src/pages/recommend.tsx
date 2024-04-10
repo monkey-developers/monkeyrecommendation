@@ -43,7 +43,7 @@ export const Recommend = () => {
       draggable: false,
       progress: undefined,
       theme: "colored",
-      onClose: () => navigate({ to: "/" }),
+      onClose: () => navigate({ to: "/review" }),
     });
 
   const notifyErr = () =>

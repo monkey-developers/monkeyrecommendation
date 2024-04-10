@@ -3,6 +3,8 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { Link } from "@tanstack/react-router";
+import { House } from "@phosphor-icons/react";
 
 import { Card, FloatButton } from "../components";
 
@@ -82,6 +84,13 @@ export const ReviewPage = () => {
           deleteFunc={deleteRecommendation}
         />
       ))}
+
+      <Link
+        to="/"
+        className="bg-blue-500 fixed bottom-20 right-6 rounded-3xl h-12 w-12 flex justify-center items-center"
+      >
+        <House size={44} color="white" />
+      </Link>
       <FloatButton />
       <ToastContainer
         position="top-right"
