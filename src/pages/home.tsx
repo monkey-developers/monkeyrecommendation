@@ -1,72 +1,12 @@
 import "react-toastify/dist/ReactToastify.css";
-
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
 import { Link } from "@tanstack/react-router";
 import { List } from "@phosphor-icons/react";
 import { getUser } from "../storage/localStorage";
 
-import { Card, FloatButton } from "../components";
+import { FloatButton } from "../components";
 
 export const HomePage = () => {
   const user = getUser();
-  const [animes, getAnimes] = useState<
-    [
-      {
-        id: number;
-        name: string;
-        image: string;
-        episodes: number;
-        status: string;
-        description: string;
-        author: string;
-        score: number;
-        comment: string;
-        videoId: string;
-      }
-    ]
-  >([
-    {
-      id: 0,
-      name: "none",
-      image: "none",
-      episodes: 0,
-      status: "none",
-      description: "none",
-      author: "none",
-      score: 0,
-      comment: "",
-      videoId: "",
-    },
-  ]);
-
-  const notify = () =>
-    toast.success("Deleted!", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
-      theme: "colored",
-    });
-
-  function getAllAnimes() {
-    axios
-      .get(`${import.meta.env.VITE_API}/api/animes`)
-      .then((res) => getAnimes(res.data.data));
-  }
-
-  useEffect(() => {
-    getAllAnimes();
-  }, []);
-
-  function deleteRecommendation(id: number) {
-    axios.delete(`${import.meta.env.VITE_API}/api/anime/${id}`).then(notify);
-    getAllAnimes();
-  }
 
   return (
     <>
