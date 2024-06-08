@@ -1,5 +1,12 @@
 import { RootRoute, Route, Router } from "@tanstack/react-router";
-import { ReviewPage, Recommend, Login, Register } from "./pages";
+import {
+  ReviewPage,
+  Recommend,
+  Login,
+  Register,
+  CarrouselPage,
+  BackgroundPage,
+} from "./pages";
 import { HomePage } from "./pages/home";
 
 const rootRoute = new RootRoute();
@@ -25,16 +32,36 @@ const recommendpage = new Route({
 const loginpage = new Route({
   getParentRoute: () => rootRoute,
   path: "login",
-  component: Login
-})
+  component: Login,
+});
 
 const registerpage = new Route({
   getParentRoute: () => rootRoute,
   path: "register",
-  component: Register
-})
+  component: Register,
+});
 
-const routeTree = rootRoute.addChildren([reviewpage, recommendpage, loginpage, registerpage, homepage]);
+const carrouselpage = new Route({
+  getParentRoute: () => rootRoute,
+  path: "carrousel",
+  component: CarrouselPage,
+});
+
+const backgroundpage = new Route({
+  getParentRoute: () => rootRoute,
+  path: "background",
+  component: BackgroundPage,
+});
+
+const routeTree = rootRoute.addChildren([
+  reviewpage,
+  recommendpage,
+  loginpage,
+  registerpage,
+  homepage,
+  carrouselpage,
+  backgroundpage,
+]);
 
 const router = new Router({ routeTree });
 
