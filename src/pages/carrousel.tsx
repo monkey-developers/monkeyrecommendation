@@ -1,5 +1,7 @@
 import { useState, useEffect, SetStateAction } from "react";
 import { CaretLeft, CaretRight } from "phosphor-react";
+import { Link } from "@tanstack/react-router";
+import { House } from "@phosphor-icons/react";
 
 const images = [
   "https://images.alphacoders.com/131/1311951.jpg",
@@ -65,6 +67,12 @@ export function CarrouselPage() {
             <CaretRight size={48} />
           </button>
         </div>
+        <Link
+          to="/"
+          className="bg-blue-500 fixed bottom-6  right-6 rounded-3xl h-12 w-12 flex justify-center items-center"
+        >
+          <House size={44} color="white" />
+        </Link>
         <div className="flex mt-4 space-x-2">
           {images.map((_, index) => (
             <button

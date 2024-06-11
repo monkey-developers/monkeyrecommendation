@@ -1,6 +1,6 @@
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "@tanstack/react-router";
-import { List } from "@phosphor-icons/react";
+import { List, Slideshow, SelectionBackground } from "@phosphor-icons/react";
 import { getUser } from "../storage/localStorage";
 
 import { FloatButton } from "../components";
@@ -24,9 +24,21 @@ export const HomePage = () => {
         <FloatButton />
         <Link
           to="/review"
-          className="bg-blue-500 fixed bottom-20 right-6 rounded-3xl h-12 w-12 flex"
+          className="bg-blue-500 fixed bottom-20 right-6 rounded-3xl h-12 w-12 flex items-center justify-center"
         >
           <List size={48} color="white" />
+        </Link>
+        <Link
+          to="/carrousel"
+          className="bg-blue-500 fixed bottom-[8.5rem] right-6 rounded-3xl h-12 w-12 flex items-center justify-center"
+        >
+          <Slideshow size={42} />
+        </Link>
+        <Link
+          to="/background"
+          className="bg-blue-500 fixed bottom-[12rem] right-6 rounded-3xl h-12 w-12 flex items-center justify-center"
+        >
+          <SelectionBackground size={42} />
         </Link>
       </div>
 

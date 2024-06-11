@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
+import { House } from "@phosphor-icons/react";
 
 export const BackgroundPage = () => {
   const colors = [
@@ -140,6 +142,12 @@ export const BackgroundPage = () => {
           ></button>
         ))}
       </div>
+      <Link
+        to="/"
+        className="bg-blue-500 fixed bottom-6  right-6 rounded-3xl h-12 w-12 flex justify-center items-center"
+      >
+        <House size={44} color="white" />
+      </Link>
       <div className="flex space-x-4 mb-8">
         {["RGB", "HEX", "HSL"].map((mode) => (
           <label key={mode} className="flex items-center space-x-2">

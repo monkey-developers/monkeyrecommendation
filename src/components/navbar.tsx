@@ -13,6 +13,7 @@ export const Navbar = () => {
       <div>
         <img src="mkdevs-logo.svg" className="h-7" />
       </div>
+
       <div>
         {user && (
           <div className="flex items-center gap-5">
@@ -27,6 +28,7 @@ export const Navbar = () => {
         <span className="text-xl">
           Monkey<span className="text-blue-500">recommendation</span>
         </span>
+
         <span className="text-sm text-end">
           Developed by{" "}
           <span className="text-blue-500">
